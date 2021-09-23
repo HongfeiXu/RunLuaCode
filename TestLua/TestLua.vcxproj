@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClInclude Include="CCallLuaFunc.h" />
     <ClInclude Include="LuaCallCFunc.h" />
+    <ClInclude Include="LuaCplusplusClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

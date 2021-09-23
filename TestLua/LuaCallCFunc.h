@@ -11,7 +11,6 @@
 */
 
 
-
 #include <iostream>
 #include <string>
 using namespace std;
@@ -48,4 +47,15 @@ void Test_CCode_For_Lua()
 	lua_close(lua);
 	cout << "---------------test c code for lua--------------------" << endl;
 }
+
+/*
+
+---------------test c code for lua--------------------
+lua add:1100
+---------------test c code for lua--------------------
+
+G:\Projects\RunLuaCode\x64\Debug\TestLua.exe (process 57336) exited with code 0.
+Press any key to close this window . . .
+
+*/
 
