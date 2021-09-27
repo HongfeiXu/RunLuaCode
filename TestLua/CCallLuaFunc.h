@@ -31,10 +31,13 @@ void Test_C_Call_LuaCode()
 	lua_getglobal(lua, "LuaCode_MyAdd");
 	lua_pushinteger(lua, 100);
 	lua_pushinteger(lua, 200);
+	printf("gettop = %d\n", lua_gettop(lua));
 	// C调用lua中的函数，2个传入值，1个返回参数
 	lua_call(lua, 2, 1);
+	printf("gettop = %d\n", lua_gettop(lua));
 	cout << "lua function ret: " << lua_tointeger(lua, -1) << endl;
 	lua_pop(lua, 1);
+	printf("gettop = %d\n", lua_gettop(lua));
 	lua_close(lua);
 	cout << "---------------test c call lua--------------------" << endl;
 }
@@ -42,7 +45,10 @@ void Test_C_Call_LuaCode()
 /*
 
 ---------------test c call lua--------------------
+gettop = 3
+gettop = 1
 lua function ret: 300
+gettop = 0
 ---------------test c call lua--------------------
 
 G:\Projects\RunLuaCode\x64\Debug\TestLua.exe (process 18748) exited with code 0.

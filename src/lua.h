@@ -90,6 +90,7 @@ typedef struct lua_State lua_State;
 typedef LUA_NUMBER lua_Number;
 
 
+/* type of integers in Lua */
 /* type for integer functions */
 typedef LUA_INTEGER lua_Integer;
 
