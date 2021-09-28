@@ -148,6 +148,8 @@
     <ClInclude Include="CCallLuaFunc.h" />
     <ClInclude Include="LuaCallCFunc.h" />
     <ClInclude Include="LuaCplusplusClass.h" />
+    <ClInclude Include="SimpleLuaInterpreter.h" />
+    <ClInclude Include="TestLuaAPI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

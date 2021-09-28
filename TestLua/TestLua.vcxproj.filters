@@ -20,5 +20,11 @@
     <ClInclude Include="LuaCplusplusClass.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="SimpleLuaInterpreter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="TestLuaAPI.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
