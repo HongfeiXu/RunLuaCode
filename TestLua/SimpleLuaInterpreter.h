@@ -43,7 +43,4 @@ void simple_error_handler(lua_State* L, const char* fmt, ...)
 	exit(EXIT_FAILURE);
 }
 
-static void stack_dump(lua_State* L)
-{
 
-}

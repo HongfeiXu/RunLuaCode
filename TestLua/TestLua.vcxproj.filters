@@ -26,5 +26,8 @@
     <ClInclude Include="TestLuaAPI.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="StackDump.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
