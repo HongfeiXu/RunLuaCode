@@ -1,5 +1,5 @@
 #define USE_BINDING_CODE 0
-#define USE_TEST_CODE 1
+#define USE_TEST_CODE 0
 
 
 #if USE_BINDING_CODE
@@ -29,12 +29,11 @@ int main()
 
 #else
 
-#include "SimpleLuaInterpreter.h"
+#include "StackDump.h"
 
 int main()
 {
-	simple_lua_interpreter();
-
+	stack_dump_test();
 	return 0;
 }
 
