@@ -33,6 +33,8 @@ void simple_lua_interpreter(void)
 	lua_close(L);
 }
 
+// a simple error handler, 
+// prints an error message, closes the Lua state, finishes the whole application
 void simple_error_handler(lua_State* L, const char* fmt, ...)
 {
 	va_list argp;
@@ -42,5 +44,4 @@ void simple_error_handler(lua_State* L, const char* fmt, ...)
 	lua_close(L);
 	exit(EXIT_FAILURE);
 }
-
 

@@ -4,6 +4,15 @@
     <Filter Include="src">
       <UniqueIdentifier>{493689da-7d08-4805-8107-dc99b7ec6e27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\PInLua">
+      <UniqueIdentifier>{b110e303-0914-41ba-ad0e-8de817aba816}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\PInLua\chapter27">
+      <UniqueIdentifier>{a59586a5-3405-4994-ab89-fad1a2c4acd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\PInLua\chapter28">
+      <UniqueIdentifier>{db8ba2b9-098a-4d99-8052-3535ef971b1d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
@@ -20,14 +29,25 @@
     <ClInclude Include="LuaCplusplusClass.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="SimpleLuaInterpreter.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="TestLuaAPI.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="StackDump.h">
-      <Filter>src</Filter>
+    <ClInclude Include="SetLimit.h">
+      <Filter>src\PInLua\chapter27</Filter>
     </ClInclude>
+    <ClInclude Include="SimpleLuaInterpreter.h">
+      <Filter>src\PInLua\chapter27</Filter>
+    </ClInclude>
+    <ClInclude Include="StackDump.h">
+      <Filter>src\PInLua\chapter27</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadUserInfoFromFile.h">
+      <Filter>src\PInLua\chapter28</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config_data.lua">
+      <Filter>src\PInLua\chapter28</Filter>
+    </None>
   </ItemGroup>
 </Project>

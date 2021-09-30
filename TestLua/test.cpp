@@ -29,11 +29,11 @@ int main()
 
 #else
 
-#include "StackDump.h"
+#include "LoadUserInfoFromFile.h"
 
 int main()
 {
-	stack_dump_test();
+	get_glob_color_test();
 	return 0;
 }
 

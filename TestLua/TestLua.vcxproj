@@ -146,11 +146,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCallLuaFunc.h" />
+    <ClInclude Include="LoadUserInfoFromFile.h" />
     <ClInclude Include="LuaCallCFunc.h" />
     <ClInclude Include="LuaCplusplusClass.h" />
+    <ClInclude Include="SetLimit.h" />
     <ClInclude Include="SimpleLuaInterpreter.h" />
     <ClInclude Include="StackDump.h" />
     <ClInclude Include="TestLuaAPI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config_data.lua" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
