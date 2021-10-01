@@ -16,7 +16,15 @@ extern "C"
 }
 
 
+/////////////////////////////////////////////////////
 // A generic call function
+// takes the name of a global function to be called, 
+// a string describing the types of the argumentsand results, 
+// then the list of arguments, and finally a list of
+// pointers to variables to store the results.
+// ¡°Calling a Lua function from C¡± simply like this:
+// call_va(L, "f", "dd>d", x, y, &z)
+
 void call_va(lua_State* L, const char* func, const char* sig, ...)
 {
     va_list vl;
