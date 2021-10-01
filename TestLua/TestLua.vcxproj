@@ -146,7 +146,9 @@
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CallALuaFunctionFromC.h" />
     <ClInclude Include="CCallLuaFunc.h" />
+    <ClInclude Include="GenericCallFunction.h" />
     <ClInclude Include="LoadUserInfoFromFile.h" />
     <ClInclude Include="LuaCallCFunc.h" />
     <ClInclude Include="LuaCplusplusClass.h" />
@@ -158,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="config_data.lua" />
+    <None Include="functions.lua" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

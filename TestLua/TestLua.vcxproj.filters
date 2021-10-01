@@ -48,9 +48,18 @@
     <ClInclude Include="LuaUtils.h">
       <Filter>src\PInLua</Filter>
     </ClInclude>
+    <ClInclude Include="CallALuaFunctionFromC.h">
+      <Filter>src\PInLua\chapter28</Filter>
+    </ClInclude>
+    <ClInclude Include="GenericCallFunction.h">
+      <Filter>src\PInLua\chapter28</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="config_data.lua">
+      <Filter>src\PInLua\chapter28</Filter>
+    </None>
+    <None Include="functions.lua">
       <Filter>src\PInLua\chapter28</Filter>
     </None>
   </ItemGroup>

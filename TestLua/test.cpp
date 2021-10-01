@@ -29,12 +29,11 @@ int main()
 
 #else
 
-#include "LoadUserInfoFromFile.h"
+#include "GenericCallFunction.h"
 
 int main()
 {
-	get_glob_color_test();
-	color_as_strings_or_tables_test();
+	call_va_test();
 	return 0;
 }
 
