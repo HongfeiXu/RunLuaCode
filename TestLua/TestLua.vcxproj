@@ -142,6 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="SimpleLuaInterpreter.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,7 @@
     <ClInclude Include="SimpleLuaInterpreter.h" />
     <ClInclude Include="StackDump.h" />
     <ClInclude Include="TestLuaAPI.h" />
+    <ClInclude Include="LuaUtils.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="config_data.lua" />

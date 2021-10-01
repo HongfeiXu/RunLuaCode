@@ -18,6 +18,7 @@
     <ClCompile Include="test.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="SimpleLuaInterpreter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LuaCallCFunc.h">
@@ -43,6 +44,9 @@
     </ClInclude>
     <ClInclude Include="LoadUserInfoFromFile.h">
       <Filter>src\PInLua\chapter28</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaUtils.h">
+      <Filter>src\PInLua</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

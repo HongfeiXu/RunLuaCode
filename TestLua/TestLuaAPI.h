@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
-#include "StackDump.h"
+#include "LuaUtils.h"
 
 extern "C"
 {

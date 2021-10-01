@@ -2,7 +2,6 @@
 
 // Refs: Programming in Lua, 4th ed. Ch27 A First Example
 // A bare-bones stand-alone Lua interpreter
-// A simple error handler
 
 #include <stdio.h>
 #include <stdarg.h>
@@ -31,17 +30,5 @@ void simple_lua_interpreter(void)
 		}
 	}
 	lua_close(L);
-}
-
-// a simple error handler, 
-// prints an error message, closes the Lua state, finishes the whole application
-void simple_error_handler(lua_State* L, const char* fmt, ...)
-{
-	va_list argp;
-	va_start(argp, fmt);
-	vfprintf(stderr, fmt, argp);
-	va_end(argp);
-	lua_close(L);
-	exit(EXIT_FAILURE);
 }
 

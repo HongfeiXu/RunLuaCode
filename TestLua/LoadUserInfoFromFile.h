@@ -6,8 +6,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
-#include "SimpleLuaInterpreter.h"
-#include "StackDump.h"
+#include "LuaUtils.h"
 
 extern "C"
 {
@@ -19,19 +18,6 @@ extern "C"
 // --------------------------------------------------------
 // Getting user information from a configuration file
 // --------------------------------------------------------
-
-// 加载lua源文件，并运行一下
-void load_lua_src(lua_State* L, const char* fname)
-{
-	// luaL_loadfile 底层走的是 lua_load，
-	// 如果没有错误，将编译好的代码块压到栈顶
-	// 否则，将错误消息压到栈顶
-	// lua_pcall run the compiled chunk
-	if (luaL_loadfile(L, fname) || lua_pcall(L, 0, 0, 0))
-	{
-		simple_error_handler(L, "cannot run config. file: %s", lua_tostring(L, -1));
-	}
-}
 
 int getglobint(lua_State* L, const char* var)
 {
