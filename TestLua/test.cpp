@@ -33,7 +33,8 @@ int main()
 
 int main()
 {
-	get_glob_color_test();
+	//get_glob_color_test();
+	color_as_strings_or_tables_test();
 	return 0;
 }
 

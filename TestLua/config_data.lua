@@ -3,8 +3,10 @@
 width = 200
 height = 300
 
-BLUE = {red = 0.30, green = 0.10, blue = 0}
-GREEN = {red = 0.00, green = 0.90, blue = 0}
+WHITE = {red = 1.0, green = 1.0, blue = 1.0}
+BLUE = {red = 1.0, green = 0, blue = 0}
+GREEN = {red = 0, green = 1.0, blue = 0}
 
-background = BLUE
+BACKGROUND = BLUE
+FOREGROUND = "GREEN"
 
