@@ -39,7 +39,7 @@ void call_va(lua_State* L, const char* func, const char* sig, ...)
         // check stack space
         luaL_checkstack(L, 1, "too many arguments");
 
-        switch (*sig++) 
+        switch (*sig++)
         {
         case 'd':
             lua_pushnumber(L, va_arg(vl, double));
@@ -56,7 +56,7 @@ void call_va(lua_State* L, const char* func, const char* sig, ...)
             simple_error_handler(L, "invalid opetion (%C)", *(sig - 1));
         }
     }
-    endargs:
+endargs:
 
     nres = strlen(sig); // number of excepted results
 
@@ -122,7 +122,7 @@ void call_va_test()
     // f(3, 3)
     double f_ret;
     double x = 3, y = 3;
-    call_va(L, "f", "dd>d", x, y, &f_ret);  
+    call_va(L, "f", "dd>d", x, y, &f_ret);
     printf("result = %lf\n", f_ret);
 
     // f2("hello ", "world")
