@@ -20,17 +20,7 @@ void simple_error_handler(lua_State* L, const char* fmt, ...);
 void print_stack_value(lua_State* L, int i);
 
 // Deumping the stack
-static void stack_dump(lua_State* L)
-{
-	int i;
-	int top = lua_gettop(L);	// depth of the stack
-	for (i = 1; i <= top; ++i)
-	{
-		print_stack_value(L, i);
-		printf("   ");
-	}
-	printf("\n");
-}
+static void stack_dump(lua_State* L);
 
 // 加载lua源文件
 void load_lua_src(lua_State* L, const char* fname);

@@ -47,6 +47,18 @@ void print_stack_value(lua_State* L, int i)
 	}
 }
 
+void stack_dump(lua_State* L)
+{
+	int i;
+	int top = lua_gettop(L);	// depth of the stack
+	for (i = 1; i <= top; ++i)
+	{
+		print_stack_value(L, i);
+		printf("   ");
+	}
+	printf("\n");
+}
+
 void load_lua_src(lua_State* L, const char* fname)
 {
 	// luaL_loadfile µ×²ã×ßµÄÊÇ lua_load£¬
