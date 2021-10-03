@@ -13,26 +13,22 @@
     <Filter Include="src\PInLua\chapter28">
       <UniqueIdentifier>{db8ba2b9-098a-4d99-8052-3535ef971b1d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\PInLua\chapter29">
+      <UniqueIdentifier>{811704ee-6e9f-4f05-9849-66725bc3724c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Binding">
+      <UniqueIdentifier>{68d57c43-7405-4e4e-896f-77aaddbc45ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="SimpleLuaInterpreter.cpp" />
+    <ClCompile Include="LuaUtils.cpp">
+      <Filter>src\PInLua</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LuaCallCFunc.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="CCallLuaFunc.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="LuaCplusplusClass.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="TestLuaAPI.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="SetLimit.h">
       <Filter>src\PInLua\chapter27</Filter>
     </ClInclude>
@@ -53,6 +49,21 @@
     </ClInclude>
     <ClInclude Include="GenericCallFunction.h">
       <Filter>src\PInLua\chapter28</Filter>
+    </ClInclude>
+    <ClInclude Include="CFunctionsExample.h">
+      <Filter>src\PInLua\chapter29</Filter>
+    </ClInclude>
+    <ClInclude Include="CFunctionDir.h">
+      <Filter>src\PInLua\chapter29</Filter>
+    </ClInclude>
+    <ClInclude Include="CCallLuaFunc.h">
+      <Filter>src\Binding</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaCallCFunc.h">
+      <Filter>src\Binding</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaCplusplusClass.h">
+      <Filter>src\Binding</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

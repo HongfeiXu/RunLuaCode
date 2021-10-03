@@ -55,6 +55,7 @@ extern "C" int pfc_CCode_AverageSum(lua_State * L)
 	int i;
 	for (i = 1; i <= n; ++i)
 	{
+		// note: 这块可以用 luaL_checknumber 来做类型检测
 		if (!lua_isnumber(L, i))
 		{
 			luaL_error(L, "incorrect argument");

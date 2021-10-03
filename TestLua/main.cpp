@@ -29,11 +29,11 @@ int main()
 
 #else
 
-#include "GenericCallFunction.h"
+#include "CFunctionDir.h"
 
 int main()
 {
-	call_va_test();
+	test();
 	return 0;
 }
 

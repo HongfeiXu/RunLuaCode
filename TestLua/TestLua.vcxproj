@@ -78,7 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\src;$(IncludePath)</IncludePath>
+    <IncludePath>..\thirdparty;..\src;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -115,7 +115,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -142,12 +142,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SimpleLuaInterpreter.cpp" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="LuaUtils.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CallALuaFunctionFromC.h" />
     <ClInclude Include="CCallLuaFunc.h" />
+    <ClInclude Include="CFunctionDir.h" />
+    <ClInclude Include="CFunctionsExample.h" />
     <ClInclude Include="GenericCallFunction.h" />
     <ClInclude Include="LoadUserInfoFromFile.h" />
     <ClInclude Include="LuaCallCFunc.h" />
@@ -155,7 +157,6 @@
     <ClInclude Include="SetLimit.h" />
     <ClInclude Include="SimpleLuaInterpreter.h" />
     <ClInclude Include="StackDump.h" />
-    <ClInclude Include="TestLuaAPI.h" />
     <ClInclude Include="LuaUtils.h" />
   </ItemGroup>
   <ItemGroup>
