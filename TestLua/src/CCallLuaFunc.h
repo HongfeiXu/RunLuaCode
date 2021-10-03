@@ -63,7 +63,7 @@ void Test_C_Modify_Lua_Variable()
 	luaL_openlibs(lua);		// TODO: 这个玩意是干嘛的？？？不加这个， ShowTable 就跑不了
 	// C 访问 Lua 文件
 	// luaL_dofile 成功的话，返回值是0，非0则表示有错误，这里输出错误信息
-	if (luaL_dofile(lua, "test.lua"))	
+	if (luaL_dofile(lua, "lua/test.lua"))	
 	{
 		cout << lua_tostring(lua, -1) << endl;
 	}
