@@ -71,3 +71,41 @@ void test()
 	lua_close(L);
 }
 
+/*
+
+------------------by Lua--------------------
+.
+..
+.git
+.gitattributes
+.gitignore
+.vs
+LuaExe
+LuaLib
+README.md
+RunLuaCode.sln
+src
+TestLua
+thirdparty
+x64
+------------------by CAPI-------------------
+'.'
+'..'
+'.git'
+'.gitattributes'
+'.gitignore'
+'.vs'
+'LuaExe'
+'LuaLib'
+'README.md'
+'RunLuaCode.sln'
+'src'
+'TestLua'
+'thirdparty'
+'x64'
+
+E:\BooksLearn\RunLuaCode\x64\Debug\TestLua.exe (进程 21520)已退出，代码为 0。
+按任意键关闭此窗口. . .
+
+*/
+

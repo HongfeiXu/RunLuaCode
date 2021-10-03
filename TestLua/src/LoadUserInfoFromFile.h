@@ -36,7 +36,7 @@ void load_test()
 {
 	lua_State* L = luaL_newstate();
 	int w, h;
-	load_lua_src(L, "config_data.lua");
+	load_lua_src(L, "lua/config_data.lua");
 	w = getglobint(L, "width");
 	h = getglobint(L, "height");
 	printf("w = %d, h = %d\n", w, h);
@@ -63,7 +63,7 @@ Press any key to close this window . . .
 // assume that table is on the top of the stack
 int get_color_field(lua_State* L, const char* key)
 {
-	double result;
+	int result;
 	// lua_getfield: 把 t[key] 的值压入栈，这里的t时索引指向的值。返回压入值的类型
 	if (lua_getfield(L, -1, key) != LUA_TNUMBER)
 	{
@@ -94,7 +94,7 @@ int* get_glob_color(lua_State* L, const char* var)
 void get_glob_color_test()
 {
 	lua_State* L = luaL_newstate();
-	load_lua_src(L, "config_data.lua");
+	load_lua_src(L, "lua/config_data.lua");
 	const char* color_name = "BACKGROUND";
 	int* color = get_glob_color(L, color_name);
 	printf("%s = (%d, %d, %d)\n", color_name, color[0], color[1], color[2]);
@@ -224,7 +224,7 @@ void color_as_strings_or_tables_test()
 	}
 
 	// 2. 读取配置文件中的颜色
-	load_lua_src(L, "config_data.lua");
+	load_lua_src(L, "lua/config_data.lua");
 
 	colors_as_strings_or_tables(L, "FOREGROUND");		// from string
 	colors_as_strings_or_tables(L, "CYAN");				// from table

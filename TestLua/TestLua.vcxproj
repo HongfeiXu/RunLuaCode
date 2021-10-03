@@ -147,26 +147,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="LuaUtils.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\LuaUtils.cpp" />
+    <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CallALuaFunctionFromC.h" />
-    <ClInclude Include="CCallLuaFunc.h" />
-    <ClInclude Include="CFunctionDir.h" />
-    <ClInclude Include="CFunctionsExample.h" />
-    <ClInclude Include="GenericCallFunction.h" />
-    <ClInclude Include="LoadUserInfoFromFile.h" />
-    <ClInclude Include="LuaCallCFunc.h" />
-    <ClInclude Include="LuaCplusplusClass.h" />
-    <ClInclude Include="SetLimit.h" />
-    <ClInclude Include="SimpleLuaInterpreter.h" />
-    <ClInclude Include="StackDump.h" />
-    <ClInclude Include="LuaUtils.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="config_data.lua" />
-    <None Include="functions.lua" />
+    <ClInclude Include="src\CallALuaFunctionFromC.h" />
+    <ClInclude Include="src\CCallLuaFunc.h" />
+    <ClInclude Include="src\CFunctionDir.h" />
+    <ClInclude Include="src\CFunctionsExample.h" />
+    <ClInclude Include="src\GenericCallFunction.h" />
+    <ClInclude Include="src\LoadUserInfoFromFile.h" />
+    <ClInclude Include="src\LuaCallCFunc.h" />
+    <ClInclude Include="src\LuaCplusplusClass.h" />
+    <ClInclude Include="src\LuaUtils.h" />
+    <ClInclude Include="src\SetLimit.h" />
+    <ClInclude Include="src\SimpleLuaInterpreter.h" />
+    <ClInclude Include="src\StackDump.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

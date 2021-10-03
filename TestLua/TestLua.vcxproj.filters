@@ -19,59 +19,54 @@
     <Filter Include="src\Binding">
       <UniqueIdentifier>{68d57c43-7405-4e4e-896f-77aaddbc45ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\PInLua\utils">
+      <UniqueIdentifier>{b9e8f052-2a92-469d-a9c7-b11e1aeebabe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="src\LuaUtils.cpp">
+      <Filter>src\PInLua\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="LuaUtils.cpp">
-      <Filter>src\PInLua</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SetLimit.h">
+    <ClInclude Include="src\SetLimit.h">
       <Filter>src\PInLua\chapter27</Filter>
     </ClInclude>
-    <ClInclude Include="SimpleLuaInterpreter.h">
+    <ClInclude Include="src\SimpleLuaInterpreter.h">
       <Filter>src\PInLua\chapter27</Filter>
     </ClInclude>
-    <ClInclude Include="StackDump.h">
+    <ClInclude Include="src\StackDump.h">
       <Filter>src\PInLua\chapter27</Filter>
     </ClInclude>
-    <ClInclude Include="LoadUserInfoFromFile.h">
+    <ClInclude Include="src\CallALuaFunctionFromC.h">
       <Filter>src\PInLua\chapter28</Filter>
     </ClInclude>
-    <ClInclude Include="LuaUtils.h">
-      <Filter>src\PInLua</Filter>
-    </ClInclude>
-    <ClInclude Include="CallALuaFunctionFromC.h">
+    <ClInclude Include="src\GenericCallFunction.h">
       <Filter>src\PInLua\chapter28</Filter>
     </ClInclude>
-    <ClInclude Include="GenericCallFunction.h">
+    <ClInclude Include="src\LoadUserInfoFromFile.h">
       <Filter>src\PInLua\chapter28</Filter>
     </ClInclude>
-    <ClInclude Include="CFunctionsExample.h">
+    <ClInclude Include="src\CFunctionDir.h">
       <Filter>src\PInLua\chapter29</Filter>
     </ClInclude>
-    <ClInclude Include="CFunctionDir.h">
+    <ClInclude Include="src\CFunctionsExample.h">
       <Filter>src\PInLua\chapter29</Filter>
     </ClInclude>
-    <ClInclude Include="CCallLuaFunc.h">
+    <ClInclude Include="src\LuaUtils.h">
+      <Filter>src\PInLua\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CCallLuaFunc.h">
       <Filter>src\Binding</Filter>
     </ClInclude>
-    <ClInclude Include="LuaCallCFunc.h">
+    <ClInclude Include="src\LuaCallCFunc.h">
       <Filter>src\Binding</Filter>
     </ClInclude>
-    <ClInclude Include="LuaCplusplusClass.h">
+    <ClInclude Include="src\LuaCplusplusClass.h">
       <Filter>src\Binding</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="config_data.lua">
-      <Filter>src\PInLua\chapter28</Filter>
-    </None>
-    <None Include="functions.lua">
-      <Filter>src\PInLua\chapter28</Filter>
-    </None>
   </ItemGroup>
 </Project>
