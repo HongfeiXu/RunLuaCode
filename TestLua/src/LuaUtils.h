@@ -19,7 +19,7 @@ void simple_error_handler(lua_State* L, const char* fmt, ...);
 // 打印栈中指定的元素
 void print_stack_value(lua_State* L, int i);
 
-// Deumping the stack
+// Dumping the stack
 static void stack_dump(lua_State* L);
 
 // 加载lua源文件
