@@ -71,6 +71,7 @@ void test()
 	lua_close(L);
 }
 
+
 /*
 
 ------------------by Lua--------------------
@@ -108,4 +109,6 @@ E:\BooksLearn\RunLuaCode\x64\Debug\TestLua.exe (进程 21520)已退出，代码为 0。
 按任意键关闭此窗口. . .
 
 */
+
+
 

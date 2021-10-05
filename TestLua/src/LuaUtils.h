@@ -20,7 +20,7 @@ void simple_error_handler(lua_State* L, const char* fmt, ...);
 void print_stack_value(lua_State* L, int i);
 
 // Dumping the stack
-static void stack_dump(lua_State* L);
+void stack_dump(lua_State* L);
 
 // 加载lua源文件
 void load_lua_src(lua_State* L, const char* fname);

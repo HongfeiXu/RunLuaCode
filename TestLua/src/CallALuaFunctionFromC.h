@@ -16,7 +16,7 @@ extern "C"
 }
 
 // call a function 'f' defined in Lua
-double f(lua_State* L, double x, double y)
+double call_lua_f(lua_State* L, double x, double y)
 {
 	int isnum;
 	double z;
@@ -48,7 +48,7 @@ void callALuaFunctionFromC()
 
 	load_lua_src(L, "functions.lua");
 	
-	double result = f(L, 3, 4);
+	double result = call_lua_f(L, 3, 4);
 	printf("result = %lf\n", result);
 
 	lua_close(L);

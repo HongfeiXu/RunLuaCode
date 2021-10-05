@@ -29,11 +29,12 @@ int main()
 
 #else
 
-#include "CFunctionDir.h"
+#include "EX_29.h"
 
 int main()
 {
 	test();
+
 	return 0;
 }
 

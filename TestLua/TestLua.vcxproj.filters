@@ -68,5 +68,8 @@
     <ClInclude Include="src\LuaCplusplusClass.h">
       <Filter>src\Binding</Filter>
     </ClInclude>
+    <ClInclude Include="src\EX_29.h">
+      <Filter>src\PInLua\chapter29</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
