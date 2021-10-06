@@ -69,6 +69,32 @@ static int lua_CCode_reverse(lua_State* L)
 	}
 	return n;
 }
+// Exercise 29.4: Write a function foreach that takes a table and a function and calls that function for each
+// key–value pair in the table.
+// foreach({ x = 10, y = 20 }, print)
+// -- > x 10
+// -- > y 20
+//(Hint: check the function lua_next in the Lua manual.)
+
+static int lua_CCode_foreach(lua_State* L)
+{
+	int n = lua_gettop(L);
+	luaL_checktype(L, 1, LUA_TTABLE);
+	luaL_checktype(L, 2, LUA_TFUNCTION);
+	lua_pushnil(L);
+	while (lua_next(L, 1) != 0)
+	{
+		lua_pushvalue(L, -2);	// 复制键做下一次迭代
+		lua_insert(L, -4);
+		lua_pushvalue(L, 3);	// 复制函数
+		lua_insert(L, 2);
+		lua_pcall(L, 2, LUA_MULTRET, 0);	// 调用
+
+		lua_settop(L, 3);	// 栈到余下三个元素的状态 table - func - key
+	}
+	lua_settop(L, 0);
+	return 0;		// 无返回值
+}
 
 
 // Make a C Module
@@ -77,6 +103,7 @@ static const struct luaL_Reg exlib[] = {
 	{"summation", lua_CCode_summation},
 	{"pack", lua_CCode_pack},
 	{"reverse", lua_CCode_reverse},
+	{"foreach", lua_CCode_foreach},
 	{NULL, NULL},
 };
 
@@ -101,7 +128,7 @@ void test()
 	lua_State* L = luaL_newstate();
 	luaL_openlibs(L);
 	require_exlib(L);
-	if (luaL_dofile(L, "lua/ex29.lua") != LUA_OK)
+	if (luaL_dofile(L, "lua/EX_29.lua") != LUA_OK)
 	{
 		printf("lua error: %s\n", lua_tostring(L, -1));
 	}

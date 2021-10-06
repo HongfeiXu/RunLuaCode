@@ -75,7 +75,16 @@ void traverse_table(lua_State* L, int index)
 	if (!lua_istable(L, index))
 		return;
 	lua_pushnil(L);
-	while (lua_next(L, index - 1) != 0)	// 注意：这里应该是 index-1，而不是index，因为上面又压栈了一个nil
+	if (index > 0)
+	{
+		index = index;
+	}
+	// // 为上面又压栈了一个nil，所以负号去索引的话，要-1
+	else
+	{
+		index = index - 1;
+	}
+	while (lua_next(L, index) != 0)
 	{
 		print_stack_value(L, -1);
 		printf("\n");

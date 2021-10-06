@@ -29,7 +29,7 @@ int main()
 
 #else
 
-#include "EX_29.h"
+#include "CFunctionMap.h"
 
 int main()
 {

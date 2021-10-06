@@ -22,6 +22,9 @@
     <Filter Include="src\PInLua\utils">
       <UniqueIdentifier>{b9e8f052-2a92-469d-a9c7-b11e1aeebabe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\PInLua\chapter30">
+      <UniqueIdentifier>{b407414d-b45d-4ca0-9510-30fa153b8d7d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\LuaUtils.cpp">
@@ -70,6 +73,9 @@
     </ClInclude>
     <ClInclude Include="src\EX_29.h">
       <Filter>src\PInLua\chapter29</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CFunctionMap.h">
+      <Filter>src\PInLua\chapter30</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

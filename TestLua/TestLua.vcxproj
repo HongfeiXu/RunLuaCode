@@ -154,6 +154,7 @@
     <ClInclude Include="src\CallALuaFunctionFromC.h" />
     <ClInclude Include="src\CCallLuaFunc.h" />
     <ClInclude Include="src\CFunctionDir.h" />
+    <ClInclude Include="src\CFunctionMap.h" />
     <ClInclude Include="src\CFunctionsExample.h" />
     <ClInclude Include="src\EX_29.h" />
     <ClInclude Include="src\GenericCallFunction.h" />
