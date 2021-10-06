@@ -79,7 +79,7 @@ void traverse_table(lua_State* L, int index)
 	{
 		index = index;
 	}
-	// // 为上面又压栈了一个nil，所以负号去索引的话，要-1
+	// 为上面又压栈了一个nil，所以负号去索引的话，要-1
 	else
 	{
 		index = index - 1;

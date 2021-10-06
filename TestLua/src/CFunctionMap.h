@@ -1,5 +1,7 @@
 #pragma once
 
+// Refs: Programming in Lua, 4th ed. Ch30 Techniques for Writing C Functions
+
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
@@ -13,6 +15,9 @@ extern "C"
 #include "lualib.h"
 }
 
+// The function map in C
+// applies a given function to all elements of an array,
+// replacing each element by the result of the call.
 static int lua_CCode_map(lua_State* L)
 {
 	lua_Integer i, n;
@@ -56,3 +61,14 @@ void test()
 
 	lua_close(L);
 }
+
+/*
+
+1
+2
+3
+
+E:\BooksLearn\RunLuaCode\x64\Debug\TestLua.exe (进程 27844)已退出，代码为 0。
+按任意键关闭此窗口. . .
+
+*/

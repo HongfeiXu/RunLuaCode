@@ -77,5 +77,14 @@
     <ClInclude Include="src\CFunctionMap.h">
       <Filter>src\PInLua\chapter30</Filter>
     </ClInclude>
+    <ClInclude Include="src\CFunctionSplit.h">
+      <Filter>src\PInLua\chapter30</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CFunctionStrUpper.h">
+      <Filter>src\PInLua\chapter30</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CFunctionTableConcat.h">
+      <Filter>src\PInLua\chapter30</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

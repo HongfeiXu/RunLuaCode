@@ -36,6 +36,13 @@ Chapter 29. Calling C from Lua
 - MyLib Project test.c
 - EX_29.h
 
+Chapter 30. Techniques for Writing C Functions
+
+- CFunctionMap.h
+- CFunctionSplit.h
+- CFunctionStrUpper.h
+- CFunctionTableConcat.h
+
 # Lua C\C++ binding
 
 目标：

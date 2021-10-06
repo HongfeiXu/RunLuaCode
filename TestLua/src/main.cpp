@@ -29,7 +29,7 @@ int main()
 
 #else
 
-#include "CFunctionMap.h"
+#include "CFunctionTableConcat.h"
 
 int main()
 {
