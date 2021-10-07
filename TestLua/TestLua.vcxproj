@@ -159,8 +159,10 @@
     <ClInclude Include="src\CFunctionSplit.h" />
     <ClInclude Include="src\CFunctionStrUpper.h" />
     <ClInclude Include="src\CFunctionTableConcat.h" />
+    <ClInclude Include="src\CFunctionUpvalues.h" />
     <ClInclude Include="src\EX_29.h" />
     <ClInclude Include="src\GenericCallFunction.h" />
+    <ClInclude Include="src\ImpTupleByUpvalue.h" />
     <ClInclude Include="src\LoadUserInfoFromFile.h" />
     <ClInclude Include="src\LuaCallCFunc.h" />
     <ClInclude Include="src\LuaCplusplusClass.h" />

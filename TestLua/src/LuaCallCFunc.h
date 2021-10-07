@@ -13,6 +13,7 @@
 
 #include <iostream>
 #include <string>
+#include "LuaUtils.h"
 using namespace std;
 
 
@@ -25,26 +26,32 @@ extern "C"
 #include "lualib.h"
 }
 
-extern "C" long long CCode_MyAdd(long long a, long long b)
+static int lua_CCode_MyAdd(lua_State* lua);		// forward declaration
+
+static int lua_CCode_MyAddClosure(lua_State* L)
 {
-	return a + b;
+	lua_pushinteger(L, 9);	// 给函数 lua_CCode_MyAdd 加一个upvalue
+	lua_pushcclosure(L, &lua_CCode_MyAdd, 1);
+	return 1;
 }
 
-extern "C" int pcf_CCode_MyAdd(lua_State * lua)		// lua_CFunction 形式
+static int lua_CCode_MyAdd(lua_State * lua)		// lua_CFunction 形式
 {
+	lua_Integer upvalue = lua_tointeger(lua, lua_upvalueindex(1));
+	printf("upvalue = %lld\n", upvalue);
 	int n = lua_gettop(lua);	// 函数收到的参数个数
 	if (n != 2)
 	{
 		luaL_error(lua, "params error");	// TODO: 上层哪里处理这个error
 	}
-	long long n1 = lua_tointeger(lua, -1);		// 从 lua 虚拟栈 取出两个整数
-	long long n2 = lua_tointeger(lua, -2);
-	long long iRet = CCode_MyAdd(n1, n2);
+	lua_Integer n1 = lua_tointeger(lua, -1);		// 从 lua 虚拟栈 取出两个整数
+	lua_Integer n2 = lua_tointeger(lua, -2);
+	lua_Integer iRet = n1 + n2 + upvalue;
 	lua_pushinteger(lua, iRet);					// 将结果压如 虚拟栈
 	return 1;
 }
 
-extern "C" int pfc_CCode_AverageSum(lua_State * L)
+static int lua_CCode_AverageSum(lua_State * L)
 {
 	int n = lua_gettop(L);
 	if (n < 1)
@@ -73,10 +80,16 @@ void Test_CCode_For_Lua()
 	cout << "-------------test1--------------" << endl;
 	lua_State* lua = luaL_newstate();
 	luaL_openlibs(lua);
-	lua_register(lua, "CCode_MyAdd", pcf_CCode_MyAdd);		// 将 pcf_CCode_MyAdd 注册成 CCode_MyAdd 加到全局表中
-	luaL_dostring(lua, "print(\"lua add:\"..CCode_MyAdd(100,1000))");	// 将字符串转换为lua文件并解析执行
+	lua_register(lua, "CCode_MyAddClosure", lua_CCode_MyAddClosure);		// 将 pcf_CCode_MyAdd 注册成 CCode_MyAdd 加到全局表中
+	luaL_dostring(lua, "addfunc = CCode_MyAddClosure()");
+	int errcode = luaL_dostring(lua, "print(\"lua add:\"..addfunc(100,1000))");	// 将字符串转换为lua文件并解析执行
+	if (errcode != LUA_OK)
+	{
+		simple_error_handler(lua, "%s\n", lua_tostring(lua , -1));
+	}
+
 	cout << "-------------test2--------------" << endl;
-	lua_register(lua, "CCode_AverageSum", pfc_CCode_AverageSum);
+	lua_register(lua, "CCode_AverageSum", lua_CCode_AverageSum);
 	luaL_dostring(lua, "print(CCode_AverageSum(1,2,3,4,5))");
 	lua_close(lua);
 	cout << "---------------test c code for lua--------------------" << endl;

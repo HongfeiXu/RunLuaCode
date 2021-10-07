@@ -86,5 +86,11 @@
     <ClInclude Include="src\CFunctionTableConcat.h">
       <Filter>src\PInLua\chapter30</Filter>
     </ClInclude>
+    <ClInclude Include="src\CFunctionUpvalues.h">
+      <Filter>src\PInLua\chapter30</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ImpTupleByUpvalue.h">
+      <Filter>src\PInLua\chapter30</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
