@@ -166,9 +166,9 @@ LUA_API lua_Number (lua_version) (lua_State *L);
 ** basic stack manipulation
 */
 LUA_API int   (lua_absindex) (lua_State *L, int idx);
-LUA_API int   (lua_gettop) (lua_State *L);
-LUA_API void  (lua_settop) (lua_State *L, int idx);
-LUA_API void  (lua_pushvalue) (lua_State *L, int idx);
+LUA_API int   (lua_gettop) (lua_State *L);              // 返回栈顶元素的索引
+LUA_API void  (lua_settop) (lua_State *L, int idx);     // 把堆栈的索引设为这个元素
+LUA_API void  (lua_pushvalue) (lua_State *L, int idx);  // 复制索引处元素作为副本压栈
 LUA_API void  (lua_rotate) (lua_State *L, int idx, int n);
 LUA_API void  (lua_copy) (lua_State *L, int fromidx, int toidx);
 LUA_API int   (lua_checkstack) (lua_State *L, int n);
@@ -191,10 +191,10 @@ LUA_API const char     *(lua_typename) (lua_State *L, int tp);
 LUA_API lua_Number      (lua_tonumberx) (lua_State *L, int idx, int *isnum);
 LUA_API lua_Integer     (lua_tointegerx) (lua_State *L, int idx, int *isnum);
 LUA_API int             (lua_toboolean) (lua_State *L, int idx);
-LUA_API const char     *(lua_tolstring) (lua_State *L, int idx, size_t *len);
+LUA_API const char     *(lua_tolstring) (lua_State *L, int idx, size_t *len); // 把给定索引处的 Lua 值转换为一个 C 字符串。
 LUA_API lua_Unsigned    (lua_rawlen) (lua_State *L, int idx);
 LUA_API lua_CFunction   (lua_tocfunction) (lua_State *L, int idx);
-LUA_API void	       *(lua_touserdata) (lua_State *L, int idx);
+LUA_API void	       *(lua_touserdata) (lua_State *L, int idx); // 如果给定索引处的值是一个完全用户数据， 函数返回其内存块的地址。 如果值是一个轻量用户数据， 那么就返回它表示的指针。 否则，返回 NULL 。
 LUA_API lua_State      *(lua_tothread) (lua_State *L, int idx);
 LUA_API const void     *(lua_topointer) (lua_State *L, int idx);
 
@@ -265,14 +265,14 @@ LUA_API int  (lua_getiuservalue) (lua_State *L, int idx, int n);
 /*
 ** set functions (stack -> Lua)
 */
-LUA_API void  (lua_setglobal) (lua_State *L, const char *name);
+LUA_API void  (lua_setglobal) (lua_State *L, const char *name); // 从堆栈上弹出一个值，并将其设为全局变量 name 的新值。
 LUA_API void  (lua_settable) (lua_State *L, int idx);
 LUA_API void  (lua_setfield) (lua_State *L, int idx, const char *k);
 LUA_API void  (lua_seti) (lua_State *L, int idx, lua_Integer n);
 LUA_API void  (lua_rawset) (lua_State *L, int idx);
-LUA_API void  (lua_rawseti) (lua_State *L, int idx, lua_Integer n);
+LUA_API void  (lua_rawseti) (lua_State *L, int idx, lua_Integer n); // 等价于 t[i] = v ， 这里的 t 是指给定索引处的表， 而 v 是栈顶的值。
 LUA_API void  (lua_rawsetp) (lua_State *L, int idx, const void *p);
-LUA_API int   (lua_setmetatable) (lua_State *L, int objindex);
+LUA_API int   (lua_setmetatable) (lua_State *L, int objindex); // 把一张表弹出栈，并将其设为给定索引处的值的元表。
 LUA_API int   (lua_setiuservalue) (lua_State *L, int idx, int n);
 
 
@@ -365,7 +365,7 @@ LUA_API void (lua_closeslot) (lua_State *L, int idx);
 
 #define lua_pop(L,n)		lua_settop(L, -(n)-1)
 
-#define lua_newtable(L)		lua_createtable(L, 0, 0)
+#define lua_newtable(L)		lua_createtable(L, 0, 0)    // 创建空表，压栈
 
 #define lua_register(L,n,f) (lua_pushcfunction(L, (f)), lua_setglobal(L, (n)))
 
@@ -385,10 +385,10 @@ LUA_API void (lua_closeslot) (lua_State *L, int idx);
 #define lua_pushglobaltable(L)  \
 	((void)lua_rawgeti(L, LUA_REGISTRYINDEX, LUA_RIDX_GLOBALS))
 
-#define lua_tostring(L,i)	lua_tolstring(L, (i), NULL)
+#define lua_tostring(L,i)	lua_tolstring(L, (i), NULL) // 把给定索引处的 Lua 值转换为一个 C 字符串。
 
 
-#define lua_insert(L,idx)	lua_rotate(L, (idx), 1)
+#define lua_insert(L,idx)	lua_rotate(L, (idx), 1) // 把栈顶元素移动到指定的有效索引处， 依次移动这个索引之上的元素。
 
 #define lua_remove(L,idx)	(lua_rotate(L, (idx), -1), lua_pop(L, 1))
 
@@ -410,7 +410,7 @@ LUA_API void (lua_closeslot) (lua_State *L, int idx);
 
 #endif
 
-#define lua_newuserdata(L,s)	lua_newuserdatauv(L,s,1)
+#define lua_newuserdata(L,s)	lua_newuserdatauv(L,s,1) // 这个函数分配一块指定大小的内存块， 把内存块地址作为一个完全用户数据压栈， 并返回这个地址。 宿主程序可以随意使用这块内存。
 #define lua_getuservalue(L,idx)	lua_getiuservalue(L,idx,1)
 #define lua_setuservalue(L,idx)	lua_setiuservalue(L,idx,1)
 

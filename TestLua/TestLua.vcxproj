@@ -151,6 +151,7 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\BooleanArray.h" />
     <ClInclude Include="src\CallALuaFunctionFromC.h" />
     <ClInclude Include="src\CCallLuaFunc.h" />
     <ClInclude Include="src\CFunctionDir.h" />
@@ -161,6 +162,7 @@
     <ClInclude Include="src\CFunctionTableConcat.h" />
     <ClInclude Include="src\CFunctionUpvalues.h" />
     <ClInclude Include="src\EX_29.h" />
+    <ClInclude Include="src\EX_30.h" />
     <ClInclude Include="src\GenericCallFunction.h" />
     <ClInclude Include="src\ImpTupleByUpvalue.h" />
     <ClInclude Include="src\LoadUserInfoFromFile.h" />

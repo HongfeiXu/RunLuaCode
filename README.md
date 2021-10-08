@@ -42,8 +42,17 @@ Chapter 30. Techniques for Writing C Functions
 - CFunctionSplit.h
 - CFunctionStrUpper.h
 - CFunctionTableConcat.h
+- CFunctionUpvalues.h
+- ImpTupleByUpValue.h
+
+Chapter 31.  User-Defined Types in C
+
+- BooleanArray.h
+
+
 
 # Lua C\C++ binding
+
 
 目标：
 

@@ -4,31 +4,34 @@
     <Filter Include="src">
       <UniqueIdentifier>{493689da-7d08-4805-8107-dc99b7ec6e27}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\PInLua">
-      <UniqueIdentifier>{b110e303-0914-41ba-ad0e-8de817aba816}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\PInLua\chapter27">
-      <UniqueIdentifier>{a59586a5-3405-4994-ab89-fad1a2c4acd3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\PInLua\chapter28">
-      <UniqueIdentifier>{db8ba2b9-098a-4d99-8052-3535ef971b1d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\PInLua\chapter29">
-      <UniqueIdentifier>{811704ee-6e9f-4f05-9849-66725bc3724c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Binding">
       <UniqueIdentifier>{68d57c43-7405-4e4e-896f-77aaddbc45ce}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\PInLua\utils">
+    <Filter Include="src\ProgrammingInLua 4th.">
+      <UniqueIdentifier>{b110e303-0914-41ba-ad0e-8de817aba816}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ProgrammingInLua 4th.\chapter27 An Overview of the C API">
+      <UniqueIdentifier>{a59586a5-3405-4994-ab89-fad1a2c4acd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ProgrammingInLua 4th.\chapter28 Extending Your Application">
+      <UniqueIdentifier>{db8ba2b9-098a-4d99-8052-3535ef971b1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ProgrammingInLua 4th.\chapter29 Calling C from Lua">
+      <UniqueIdentifier>{811704ee-6e9f-4f05-9849-66725bc3724c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ProgrammingInLua 4th.\utils">
       <UniqueIdentifier>{b9e8f052-2a92-469d-a9c7-b11e1aeebabe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\PInLua\chapter30">
+    <Filter Include="src\ProgrammingInLua 4th.\chapter30 Techniques for Writing C Functions">
       <UniqueIdentifier>{b407414d-b45d-4ca0-9510-30fa153b8d7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ProgrammingInLua 4th.\chapter31 User-Defined Types in C">
+      <UniqueIdentifier>{ba27cfab-f9b8-44e8-970a-d5c54b9364ef}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\LuaUtils.cpp">
-      <Filter>src\PInLua\utils</Filter>
+      <Filter>src\ProgrammingInLua 4th.\utils</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
@@ -36,31 +39,31 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\SetLimit.h">
-      <Filter>src\PInLua\chapter27</Filter>
+      <Filter>src\ProgrammingInLua 4th.\chapter27 An Overview of the C API</Filter>
     </ClInclude>
     <ClInclude Include="src\SimpleLuaInterpreter.h">
-      <Filter>src\PInLua\chapter27</Filter>
+      <Filter>src\ProgrammingInLua 4th.\chapter27 An Overview of the C API</Filter>
     </ClInclude>
     <ClInclude Include="src\StackDump.h">
-      <Filter>src\PInLua\chapter27</Filter>
+      <Filter>src\ProgrammingInLua 4th.\chapter27 An Overview of the C API</Filter>
     </ClInclude>
     <ClInclude Include="src\CallALuaFunctionFromC.h">
-      <Filter>src\PInLua\chapter28</Filter>
+      <Filter>src\ProgrammingInLua 4th.\chapter28 Extending Your Application</Filter>
     </ClInclude>
     <ClInclude Include="src\GenericCallFunction.h">
-      <Filter>src\PInLua\chapter28</Filter>
+      <Filter>src\ProgrammingInLua 4th.\chapter28 Extending Your Application</Filter>
     </ClInclude>
     <ClInclude Include="src\LoadUserInfoFromFile.h">
-      <Filter>src\PInLua\chapter28</Filter>
+      <Filter>src\ProgrammingInLua 4th.\chapter28 Extending Your Application</Filter>
     </ClInclude>
     <ClInclude Include="src\CFunctionDir.h">
-      <Filter>src\PInLua\chapter29</Filter>
+      <Filter>src\ProgrammingInLua 4th.\chapter29 Calling C from Lua</Filter>
     </ClInclude>
     <ClInclude Include="src\CFunctionsExample.h">
-      <Filter>src\PInLua\chapter29</Filter>
+      <Filter>src\ProgrammingInLua 4th.\chapter29 Calling C from Lua</Filter>
     </ClInclude>
     <ClInclude Include="src\LuaUtils.h">
-      <Filter>src\PInLua\utils</Filter>
+      <Filter>src\ProgrammingInLua 4th.\utils</Filter>
     </ClInclude>
     <ClInclude Include="src\CCallLuaFunc.h">
       <Filter>src\Binding</Filter>
@@ -72,25 +75,31 @@
       <Filter>src\Binding</Filter>
     </ClInclude>
     <ClInclude Include="src\EX_29.h">
-      <Filter>src\PInLua\chapter29</Filter>
+      <Filter>src\ProgrammingInLua 4th.\chapter29 Calling C from Lua</Filter>
     </ClInclude>
     <ClInclude Include="src\CFunctionMap.h">
-      <Filter>src\PInLua\chapter30</Filter>
+      <Filter>src\ProgrammingInLua 4th.\chapter30 Techniques for Writing C Functions</Filter>
     </ClInclude>
     <ClInclude Include="src\CFunctionSplit.h">
-      <Filter>src\PInLua\chapter30</Filter>
+      <Filter>src\ProgrammingInLua 4th.\chapter30 Techniques for Writing C Functions</Filter>
     </ClInclude>
     <ClInclude Include="src\CFunctionStrUpper.h">
-      <Filter>src\PInLua\chapter30</Filter>
+      <Filter>src\ProgrammingInLua 4th.\chapter30 Techniques for Writing C Functions</Filter>
     </ClInclude>
     <ClInclude Include="src\CFunctionTableConcat.h">
-      <Filter>src\PInLua\chapter30</Filter>
+      <Filter>src\ProgrammingInLua 4th.\chapter30 Techniques for Writing C Functions</Filter>
     </ClInclude>
     <ClInclude Include="src\CFunctionUpvalues.h">
-      <Filter>src\PInLua\chapter30</Filter>
+      <Filter>src\ProgrammingInLua 4th.\chapter30 Techniques for Writing C Functions</Filter>
     </ClInclude>
     <ClInclude Include="src\ImpTupleByUpvalue.h">
-      <Filter>src\PInLua\chapter30</Filter>
+      <Filter>src\ProgrammingInLua 4th.\chapter30 Techniques for Writing C Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EX_30.h">
+      <Filter>src\ProgrammingInLua 4th.\chapter30 Techniques for Writing C Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BooleanArray.h">
+      <Filter>src\ProgrammingInLua 4th.\chapter31 User-Defined Types in C</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
