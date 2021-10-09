@@ -29,7 +29,7 @@ int main()
 
 #else
 
-#include "IntegerArray.h"
+#include "DirIterator.h"
 
 int main()
 {

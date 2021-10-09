@@ -39,7 +39,7 @@ int lua_CCode_dir(lua_State* L)
 		lua_pushstring(L, entry->d_name);
 		lua_settable(L, -3);	// pops the key and the value from the stack
 	}
-	closedir(dir);
+	closedir(dir);	// 有风险，如果中间出错，则无法正确关闭dir
 
 	return 1;
 }

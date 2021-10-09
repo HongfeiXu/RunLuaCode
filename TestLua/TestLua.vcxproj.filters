@@ -28,6 +28,9 @@
     <Filter Include="src\ProgrammingInLua 4th.\chapter31 User-Defined Types in C">
       <UniqueIdentifier>{ba27cfab-f9b8-44e8-970a-d5c54b9364ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ProgrammingInLua 4th.\chapter32 Managing Resources">
+      <UniqueIdentifier>{63233ba2-1ece-490a-90b9-00d0aa78cf6c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\LuaUtils.cpp">
@@ -103,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="src\IntegerArray.h">
       <Filter>src\ProgrammingInLua 4th.\chapter31 User-Defined Types in C</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DirIterator.h">
+      <Filter>src\ProgrammingInLua 4th.\chapter32 Managing Resources</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

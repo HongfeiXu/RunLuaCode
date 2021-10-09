@@ -48,8 +48,11 @@ Chapter 30. Techniques for Writing C Functions
 Chapter 31.  User-Defined Types in C
 
 - BooleanArray.h
+- IntegerArray.h
 
+Chapter 32. Managing Resources
 
+- DirIterator.h
 
 # Lua C\C++ binding
 

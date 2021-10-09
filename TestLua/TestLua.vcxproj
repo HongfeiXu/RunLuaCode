@@ -161,6 +161,7 @@
     <ClInclude Include="src\CFunctionStrUpper.h" />
     <ClInclude Include="src\CFunctionTableConcat.h" />
     <ClInclude Include="src\CFunctionUpvalues.h" />
+    <ClInclude Include="src\DirIterator.h" />
     <ClInclude Include="src\EX_29.h" />
     <ClInclude Include="src\EX_30.h" />
     <ClInclude Include="src\GenericCallFunction.h" />
