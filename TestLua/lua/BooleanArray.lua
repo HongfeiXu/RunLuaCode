@@ -1,10 +1,10 @@
-a = array.new(5)
+a = booleanarray.new(5)
 
 a[1] = true
 a[3] = true
 a[5] = true
 
-b = array.new(4)
+b = booleanarray.new(4)
 b[1] = true
 b[4] = true
 

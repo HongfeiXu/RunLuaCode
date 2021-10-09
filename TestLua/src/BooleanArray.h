@@ -32,7 +32,7 @@ print(array.size(a)) --> 1000
 #define I_WORD(i) ((unsigned int)(i) / BITS_PER_WORD) // 需要多少个 unsigned int 去存 0、1 值，BitArray中已经有values[0]，这里不需要向上取整
 #define I_BIT(i) (1 << ((unsigned int)(i) % BITS_PER_WORD)) // computes a mask to access the correct bit inside this word
 
-#define checkarray(L, n) (BitArray*)luaL_checkudata(L, n, "LuaBook.array")
+#define checkarray(L, n) (BitArray*)luaL_checkudata(L, n, "LuaBook.booleanarray")
 #define checkarrayindex(bitarray, i) (bitarray->values[(I_WORD(i))] & I_BIT(i))
 
 typedef struct BitArray {
@@ -57,8 +57,8 @@ static int newarray(lua_State* L)
 		a->values[i] = 0;	// initialize array
 	}
 
-	luaL_getmetatable(L, "LuaBook.array");
-	lua_setmetatable(L, -2);	// 将 LuaBook.array 设为 userdata 的 metatable，
+	luaL_getmetatable(L, "LuaBook.booleanarray");
+	lua_setmetatable(L, -2);	// 将 LuaBook.booleanarray 设为 userdata 的 metatable，
 								// 这样所有的 array 都关联了这个 metatable
 								// 基于此，做类型合法性的判断
 	return 1;
@@ -134,7 +134,7 @@ static int array2string_elegant(lua_State* L)	// 更优雅的输出
 
 	luaL_Buffer b;
 	luaL_buffinit(L, &b);
-	luaL_addstring(&b, "==== array start ===\n");
+	luaL_addstring(&b, "==== booleanarray start ===\n");
 	sprintf(buffer, "size: %d\n", a->size);
 	luaL_addstring(&b, buffer);
 	for (int i = 0; i < a->size; ++i)
@@ -142,7 +142,7 @@ static int array2string_elegant(lua_State* L)	// 更优雅的输出
 		sprintf(buffer, "[%d] = %s\n", i + 1, checkarrayindex(a, i) ? "true" : "false");
 		luaL_addstring(&b, buffer);
 	}
-	luaL_addstring(&b, "==== array end ===\n");
+	luaL_addstring(&b, "==== booleanarray end ===\n");
 	luaL_pushresult(&b);
 	return 1;
 }
@@ -246,7 +246,7 @@ static const struct luaL_Reg arraylib_m[] = {
 
 int luaopen_arraylib(lua_State* L)
 {
-	luaL_newmetatable(L, "LuaBook.array");	// create the metatable for array
+	luaL_newmetatable(L, "LuaBook.booleanarray");	// create the metatable for array
 	luaL_setfuncs(L, arraylib_m, 0);	// register metamethods
 	luaL_newlib(L, arraylib_f);			// create lib table, register functions
 	return 1;
@@ -255,7 +255,7 @@ int luaopen_arraylib(lua_State* L)
 void require_arraylib(lua_State* L)
 {
 	// https://www.lua.org/manual/5.4/manual.html#luaL_requiref
-	luaL_requiref(L, "array", luaopen_arraylib, 1);
+	luaL_requiref(L, "booleanarray", luaopen_arraylib, 1);
 	lua_pop(L, 1);
 }
 

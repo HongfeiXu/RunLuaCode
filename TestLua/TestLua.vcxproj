@@ -165,6 +165,7 @@
     <ClInclude Include="src\EX_30.h" />
     <ClInclude Include="src\GenericCallFunction.h" />
     <ClInclude Include="src\ImpTupleByUpvalue.h" />
+    <ClInclude Include="src\IntegerArray.h" />
     <ClInclude Include="src\LoadUserInfoFromFile.h" />
     <ClInclude Include="src\LuaCallCFunc.h" />
     <ClInclude Include="src\LuaCplusplusClass.h" />

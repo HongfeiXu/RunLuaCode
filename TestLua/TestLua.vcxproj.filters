@@ -101,5 +101,8 @@
     <ClInclude Include="src\BooleanArray.h">
       <Filter>src\ProgrammingInLua 4th.\chapter31 User-Defined Types in C</Filter>
     </ClInclude>
+    <ClInclude Include="src\IntegerArray.h">
+      <Filter>src\ProgrammingInLua 4th.\chapter31 User-Defined Types in C</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

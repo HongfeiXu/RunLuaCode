@@ -29,7 +29,7 @@ int main()
 
 #else
 
-#include "BooleanArray.h"
+#include "IntegerArray.h"
 
 int main()
 {
