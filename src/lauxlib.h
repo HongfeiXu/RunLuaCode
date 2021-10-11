@@ -67,7 +67,7 @@ LUALIB_API void (luaL_checkstack) (lua_State *L, int sz, const char *msg);
 LUALIB_API void (luaL_checktype) (lua_State *L, int arg, int t); // 检查函数的第arg个参数的类型是否是t
 LUALIB_API void (luaL_checkany) (lua_State *L, int arg); // 检查函数在 arg 位置是否有任何类型（包括 nil）的参数。
 
-LUALIB_API int   (luaL_newmetatable) (lua_State *L, const char *tname); // 如果注册表中已存在键 tname，返回 0 。 否则， 为用户数据的元表创建一张新表。 向这张表加入 __name = tname 键值对， 并将 [tname] = new table 添加到注册表中， 返回 1 。
+LUALIB_API int   (luaL_newmetatable) (lua_State *L, const char *tname); // 如果注册表中已存在键 tname，返回 0 。 否则， 为用户数据的元表创建一张新表。 向这张表加入 __name = tname 键值对， 并将 [tname] = new table 添加到注册表中， 返回 1 。这两种情况都会把最终的注册表中关联 tname 的值压栈。
 LUALIB_API void  (luaL_setmetatable) (lua_State *L, const char *tname); // 将注册表中 tname 关联元表 （参见 luaL_newmetatable） 设为栈顶对象的元表。
 LUALIB_API void *(luaL_testudata) (lua_State *L, int ud, const char *tname); // 此函数和 luaL_checkudata 类似。 但它在测试失败时会返回 NULL 而不是抛出错误。
 LUALIB_API void *(luaL_checkudata) (lua_State *L, int ud, const char *tname); // 检查函数的第 arg 个参数是否是一个类型为 tname 的用户数据 （参见 luaL_newmetatable )。 它会返回该用户数据的地址 （参见 lua_touserdata）。

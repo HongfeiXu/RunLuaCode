@@ -59,13 +59,14 @@ static int dir_iter(lua_State* L)
 	// no more values to return
 	else
 	{
-		return 0;	// no more values to return
+		return 0;
 	}
 }
 
 static int dir_gc(lua_State* L)
 {
-	DIR* d = *(DIR**)lua_touserdata(L, lua_upvalueindex(1));
+	stack_dump(L);
+	DIR* d = *(DIR**)lua_touserdata(L, 1);	// ??? 这里为啥userdata直接在栈中了？？
 	if (d) closedir(d);
 	return 0;
 }
@@ -81,8 +82,7 @@ int luaopen_dirlib(lua_State* L)
 	// set its __gc field
 	// 设置 metatable 的 __gc
 	lua_pushcfunction(L, dir_gc);
-	lua_pushstring(L, "__gc");
-	lua_rawset(L, -3);
+	lua_setfield(L, -2, "__gc");
 
 	// create the library
 	luaL_newlib(L, dirlib);
