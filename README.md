@@ -6,6 +6,10 @@ src中为Lua 5.4.3 的所有源码
 thirdparty中为其他代码：
 - [dirent.h](https://github.com/tronkko/dirent)
 
+thirdpartylibs中为第三方库的lib
+
+- expat的x64是cmake编译出的，Win32是github上下载的
+
 # Lua C API 学习
 
 ## Programming in Lua 4th ed.
