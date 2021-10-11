@@ -110,5 +110,8 @@
     <ClInclude Include="src\DirIterator.h">
       <Filter>src\ProgrammingInLua 4th.\chapter32 Managing Resources</Filter>
     </ClInclude>
+    <ClInclude Include="src\ExpatBinding.h">
+      <Filter>src\ProgrammingInLua 4th.\chapter32 Managing Resources</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
