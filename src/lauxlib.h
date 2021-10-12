@@ -86,7 +86,7 @@ LUALIB_API int (luaL_execresult) (lua_State *L, int stat);
 #define LUA_NOREF       (-2)
 #define LUA_REFNIL      (-1)
 
-LUALIB_API int (luaL_ref) (lua_State *L, int t);
+LUALIB_API int (luaL_ref) (lua_State *L, int t); // Creates and returns a reference, in the table at index t, for the object on the top of the stack (and pops the object).
 LUALIB_API void (luaL_unref) (lua_State *L, int t, int ref);
 
 LUALIB_API int (luaL_loadfilex) (lua_State *L, const char *filename,

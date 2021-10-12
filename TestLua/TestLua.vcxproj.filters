@@ -113,5 +113,8 @@
     <ClInclude Include="src\ExpatBinding.h">
       <Filter>src\ProgrammingInLua 4th.\chapter32 Managing Resources</Filter>
     </ClInclude>
+    <ClInclude Include="src\LuaRegistry.h">
+      <Filter>src\ProgrammingInLua 4th.\chapter30 Techniques for Writing C Functions</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -76,13 +76,19 @@ static const struct luaL_Reg dirlib[] = {
 	{NULL, NULL}
 };
 
+static const struct luaL_Reg dirlib_method[] = {
+	{"__gc", dir_gc},
+	{NULL, NULL}
+};
+
 int luaopen_dirlib(lua_State* L)
 {
 	luaL_newmetatable(L, "LuaBook.dir");
-	// set its __gc field
-	// 设置 metatable 的 __gc
-	lua_pushcfunction(L, dir_gc);
-	lua_setfield(L, -2, "__gc");
+	//// set its __gc field
+	//// 设置 metatable 的 __gc
+	//lua_pushcfunction(L, dir_gc);
+	//lua_setfield(L, -2, "__gc");
+	luaL_setfuncs(L, dirlib_method, 0);	// 和上面两行等价效果
 
 	// create the library
 	luaL_newlib(L, dirlib);

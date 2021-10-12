@@ -29,11 +29,12 @@ int main()
 
 #else
 
-#include "ExpatBinding.h"
+#include "LuaRegistry.h"
 
 int main(int argc, char* argv[])
 {
-	test(argc, argv);
+	//test(argc, argv);
+	test();
 
 	return 0;
 }

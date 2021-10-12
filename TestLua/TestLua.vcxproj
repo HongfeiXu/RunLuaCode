@@ -179,6 +179,7 @@
     <ClInclude Include="src\LoadUserInfoFromFile.h" />
     <ClInclude Include="src\LuaCallCFunc.h" />
     <ClInclude Include="src\LuaCplusplusClass.h" />
+    <ClInclude Include="src\LuaRegistry.h" />
     <ClInclude Include="src\LuaUtils.h" />
     <ClInclude Include="src\SetLimit.h" />
     <ClInclude Include="src\SimpleLuaInterpreter.h" />
