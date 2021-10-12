@@ -412,7 +412,7 @@ LUA_API void (lua_closeslot) (lua_State *L, int idx);
 
 #define lua_newuserdata(L,s)	lua_newuserdatauv(L,s,1) // 这个函数分配一块指定大小的内存块， 把内存块地址作为一个完全用户数据压栈， 并返回这个地址。 宿主程序可以随意使用这块内存。
 #define lua_getuservalue(L,idx)	lua_getiuservalue(L,idx,1)
-#define lua_setuservalue(L,idx)	lua_setiuservalue(L,idx,1)
+#define lua_setuservalue(L,idx)	lua_setiuservalue(L,idx,1) // 从栈上弹出一个值并将其设为给定索引处用户数据的关联值。
 
 #define LUA_NUMTAGS		LUA_NUMTYPES
 
