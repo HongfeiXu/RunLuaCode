@@ -14,6 +14,17 @@ extern "C"
 #include "lualib.h"
 }
 
+// -------------------------------------------------
+// 整体流程框架
+//
+// lua 中定义回调函数表
+// 回调函数表传到c，c这边对表中定义的回调进行lua_call
+//
+// c这边用userdata去表示XML_Parser，并存储用来解析的一个Lua state
+// 提供创建、销毁、解析三个接口
+// -------------------------------------------------
+
+
 // use userdata to represent a parser in Lua
 typedef struct lxp_userdata {
 	XML_Parser parser;		// associated expat parser
