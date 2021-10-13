@@ -167,7 +167,7 @@ LUA_API lua_Number (lua_version) (lua_State *L);
 */
 LUA_API int   (lua_absindex) (lua_State *L, int idx);
 LUA_API int   (lua_gettop) (lua_State *L);              // 返回栈顶元素的索引
-LUA_API void  (lua_settop) (lua_State *L, int idx);     // 把堆栈的索引设为这个元素
+LUA_API void  (lua_settop) (lua_State *L, int idx);     // 参数允许传入任何索引以及 0 。 它将把堆栈的栈顶设为这个索引。如果新的栈顶比原来的大， 超出部分的新元素将被填为 nil 。 如果 index 为 0 ， 把栈上所有元素移除。
 LUA_API void  (lua_pushvalue) (lua_State *L, int idx);  // 复制索引处元素作为副本压栈
 LUA_API void  (lua_rotate) (lua_State *L, int idx, int n);
 LUA_API void  (lua_copy) (lua_State *L, int fromidx, int toidx);
@@ -250,7 +250,7 @@ LUA_API int   (lua_pushthread) (lua_State *L);
 */
 LUA_API int (lua_getglobal) (lua_State *L, const char *name);
 LUA_API int (lua_gettable) (lua_State *L, int idx);
-LUA_API int (lua_getfield) (lua_State *L, int idx, const char *k);
+LUA_API int (lua_getfield) (lua_State *L, int idx, const char *k); // 把 t[k] 的值压栈， 这里的 t 是索引指向的值。
 LUA_API int (lua_geti) (lua_State *L, int idx, lua_Integer n);
 LUA_API int (lua_rawget) (lua_State *L, int idx);
 LUA_API int (lua_rawgeti) (lua_State *L, int idx, lua_Integer n);
@@ -411,7 +411,7 @@ LUA_API void (lua_closeslot) (lua_State *L, int idx);
 #endif
 
 #define lua_newuserdata(L,s)	lua_newuserdatauv(L,s,1) // 这个函数分配一块指定大小的内存块， 把内存块地址作为一个完全用户数据压栈， 并返回这个地址。 宿主程序可以随意使用这块内存。
-#define lua_getuservalue(L,idx)	lua_getiuservalue(L,idx,1)
+#define lua_getuservalue(L,idx)	lua_getiuservalue(L,idx,1) // 将给定索引处的用户数据所关联的 Lua 值压栈。
 #define lua_setuservalue(L,idx)	lua_setiuservalue(L,idx,1) // 从栈上弹出一个值并将其设为给定索引处用户数据的关联值。
 
 #define LUA_NUMTAGS		LUA_NUMTYPES

@@ -63,7 +63,62 @@ static int lxp_make_parser(lua_State* L)
 	return 1;
 }
 
-// TODO: function to parse an XML fragment
+// function to parse an XML fragment
+static int lxp_parse(lua_State* L)
+{
+	// get and check first argument (should be a parser)
+	lxp_userdata* xpu = (lxp_userdata*)luaL_checkudata(L, 1, "LuaBook.Expat");
 
+	// check if it is not closed
+	luaL_argcheck(L, xpu->parser != NULL, 1, "parser is closed");
+
+	// get second argument (a string)
+	size_t len;
+	const char* s = luaL_optlstring(L, 2, NULL, &len);
+
+	// put callback table at stack index 3
+	lua_settop(L, 2);
+	lua_getuservalue(L, 1);
+
+	xpu->L = L;	// set Lua state
+	
+	// call Expat to parse string
+	int status = XML_Parse(xpu->parser, s, (int)len, s == NULL);	// will call the handlers for each relevant element
+																	// that it finds in the given piece of document
+
+	// return error code
+	lua_pushboolean(L, status);
+	return 1;
+}
+
+// handler for character data
+static void f_CharData(void* userData, const char* s, int len)
+{
+	lxp_userdata* xpu = (lxp_userdata*)userData;	// set by XML_SetUserData in lxp_make_parser
+	lua_State* L = xpu->L;
+
+	// get handler from callback table;
+	lua_getfield(L, 3, "CharacterData");			// set by lxp_parse
+	if (lua_isnil(L, -1))
+	{
+		lua_pop(L, 1);
+		return;
+	}
+
+	// call the Lua handler
+	lua_pushvalue(L, 1);		// push the parser('self')
+	lua_pushlstring(L, s, len);	// push char data
+	lua_call(L, 2, 0);			// call the handler
+}
+
+// TODO
+
+// handler for end elements
+
+// handler for start elements
+
+// close an xml parser
+
+// initialization code for lxp library
 
 
