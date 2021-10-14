@@ -29,11 +29,10 @@ int main()
 
 #else
 
-#include "LuaRegistry.h"
+#include "DirIterator.h"
 
 int main(int argc, char* argv[])
 {
-	//test(argc, argv);
 	test();
 
 	return 0;

@@ -57,6 +57,7 @@ Chapter 31.  User-Defined Types in C
 Chapter 32. Managing Resources
 
 - DirIterator.h
+- ExpatBinding.h
 
 # Lua C\C++ binding
 
