@@ -55,7 +55,7 @@ LUALIB_API int (luaL_typeerror) (lua_State *L, int arg, const char *tname);
 LUALIB_API const char *(luaL_checklstring) (lua_State *L, int arg,
                                                           size_t *l);
 LUALIB_API const char *(luaL_optlstring) (lua_State *L, int arg,
-                                          const char *def, size_t *l);
+	const char* def, size_t* l); // 如果函数的第 arg 个参数是一个 字符串，返回该字符串。 若该参数不存在或是 nil， 返回 d。 除此之外的情况，抛出错误。若 l 不为 NULL， 将结果的长度填入* l 。
 LUALIB_API lua_Number (luaL_checknumber) (lua_State *L, int arg);
 LUALIB_API lua_Number (luaL_optnumber) (lua_State *L, int arg, lua_Number def);
 

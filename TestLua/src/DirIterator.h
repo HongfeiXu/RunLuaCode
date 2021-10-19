@@ -49,8 +49,12 @@ static int l_dir(lua_State* L)
 
 static int dir_iter(lua_State* L)
 {
-	DIR* d = *(DIR**)lua_touserdata(L, lua_upvalueindex(1));	// 获取 upvalue DIR**
-	struct dirent* entry = readdir(d);
+	DIR** d = (DIR**)lua_touserdata(L, lua_upvalueindex(1));	// 获取 upvalue DIR**
+	if (d == NULL)
+	{
+		return 0;
+	}
+	struct dirent* entry = readdir(*d);
 	if (entry != NULL)
 	{
 		lua_pushstring(L, entry->d_name);
@@ -59,15 +63,23 @@ static int dir_iter(lua_State* L)
 	// no more values to return
 	else
 	{
+		if (*d != NULL)			// Ex 32.1 closes the DIR structure as soon as it reaches the end of the traversal.
+		{
+			closedir(*d);
+			*d = NULL;
+		}
 		return 0;
 	}
 }
 
 static int dir_gc(lua_State* L)
 {
-	stack_dump(L);
-	DIR* d = *(DIR**)lua_touserdata(L, 1);	// ??? 这里为啥userdata直接在栈中了？？
-	if (d) closedir(d);
+	printf("dir gc\n");
+	DIR** d = (DIR**)lua_touserdata(L, 1);	// ??? 这里为啥userdata直接在栈中了？？
+	if (*d != NULL)
+	{
+		closedir(*d);
+	}
 	return 0;
 }
 
