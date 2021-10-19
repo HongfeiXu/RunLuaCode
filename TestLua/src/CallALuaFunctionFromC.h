@@ -46,7 +46,7 @@ void callALuaFunctionFromC()
 	// 否则会提示
 	// 'functions.lua:2: attempt to index a nil value (global 'math')'
 
-	load_lua_src(L, "functions.lua");
+	load_lua_src(L, "lua/functions.lua");
 	
 	double result = call_lua_f(L, 3, 4);
 	printf("result = %lf\n", result);

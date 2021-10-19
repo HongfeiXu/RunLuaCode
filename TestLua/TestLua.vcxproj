@@ -181,6 +181,7 @@
     <ClInclude Include="src\LuaCplusplusClass.h" />
     <ClInclude Include="src\LuaRegistry.h" />
     <ClInclude Include="src\LuaUtils.h" />
+    <ClInclude Include="src\MultipleThreadsExample.h" />
     <ClInclude Include="src\SetLimit.h" />
     <ClInclude Include="src\SimpleLuaInterpreter.h" />
     <ClInclude Include="src\StackDump.h" />

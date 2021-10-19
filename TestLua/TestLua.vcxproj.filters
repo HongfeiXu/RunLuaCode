@@ -31,6 +31,9 @@
     <Filter Include="src\ProgrammingInLua 4th.\chapter32 Managing Resources">
       <UniqueIdentifier>{63233ba2-1ece-490a-90b9-00d0aa78cf6c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ProgrammingInLua 4th.\chapter33 Threads and States">
+      <UniqueIdentifier>{4d5a5396-9349-48c3-9cc7-7716dc349c36}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\LuaUtils.cpp">
@@ -115,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="src\LuaRegistry.h">
       <Filter>src\ProgrammingInLua 4th.\chapter30 Techniques for Writing C Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MultipleThreadsExample.h">
+      <Filter>src\ProgrammingInLua 4th.\chapter33 Threads and States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

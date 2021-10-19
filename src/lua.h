@@ -151,10 +151,10 @@ extern const char lua_ident[];
 /*
 ** state manipulation
 */
-LUA_API lua_State *(lua_newstate) (lua_Alloc f, void *ud);
-LUA_API void       (lua_close) (lua_State *L);
-LUA_API lua_State *(lua_newthread) (lua_State *L);
-LUA_API int        (lua_resetthread) (lua_State *L);
+LUA_API lua_State *(lua_newstate) (lua_Alloc f, void *ud); // 一个不透明的结构， 它指向一条线程并间接（通过该线程）引用了整个 Lua 解释器的状态。 Lua 库是完全可重入的： 它没有任何全局变量。 状态机所有的信息都可以通过这个结构访问到。
+LUA_API void       (lua_close) (lua_State *L); // 销毁指定 Lua 状态机中的所有对象 （如果有垃圾收集相关的元方法的话，会调用它们）， 并且释放状态机中使用的所有动态内存。
+LUA_API lua_State *(lua_newthread) (lua_State *L); // 创建一条新线程，并将其压栈， 并返回维护这个线程的 lua_State 指针。 这个函数返回的新线程共享原线程的全局环境， 但是它有独立的运行栈。
+LUA_API int        (lua_resetthread) (lua_State *L); // Resets a thread, cleaning its call stack and closing all pending to-be-closed variables
 
 LUA_API lua_CFunction (lua_atpanic) (lua_State *L, lua_CFunction panicf);
 

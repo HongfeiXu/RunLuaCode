@@ -1,5 +1,4 @@
 #define USE_BINDING_CODE 0
-#define USE_TEST_CODE 0
 
 
 #if USE_BINDING_CODE
@@ -16,24 +15,13 @@ int main()
 	return 0;
 }
 
-#elif USE_TEST_CODE
-
-#include "TestLuaAPI.h"
-
-int main()
-{
-	test_lua_api();
-
-	return 0;
-}
-
 #else
 
-#include "ExpatBinding.h"
+#include "MultipleThreadsExample.h"
 
 int main(int argc, char* argv[])
 {
-	test();
+	testCoroutine();
 
 	return 0;
 }
