@@ -29,7 +29,7 @@ int main()
 
 #else
 
-#include "DirIterator.h"
+#include "ExpatBinding.h"
 
 int main(int argc, char* argv[])
 {

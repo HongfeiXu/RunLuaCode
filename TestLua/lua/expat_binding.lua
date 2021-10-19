@@ -31,6 +31,18 @@ p:close()
 startTag:       themeSortOrder
 attr:   priority        high
 attr:   method  post
+f_StartElement finish
+--stack_dump begin--
+userdata   '<themeSortOrder method="post" priority="high">123</themeSortOrder>' 
+--stack_dump end--
 data:   123
+f_CharData finish
+--stack_dump begin--
+userdata   '<themeSortOrder method="post" priority="high">123</themeSortOrder>' 
+--stack_dump end--
 endTag:         themeSortOrder
+f_EndElement finish
+--stack_dump begin--
+userdata   '<themeSortOrder method="post" priority="high">123</themeSortOrder>' 
+--stack_dump end--
 --]]
