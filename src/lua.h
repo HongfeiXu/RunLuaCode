@@ -273,7 +273,7 @@ LUA_API void  (lua_rawset) (lua_State *L, int idx);
 LUA_API void  (lua_rawseti) (lua_State *L, int idx, lua_Integer n); // 等价于 t[i] = v ， 这里的 t 是指给定索引处的表， 而 v 是栈顶的值。
 LUA_API void  (lua_rawsetp) (lua_State *L, int idx, const void *p);
 LUA_API int   (lua_setmetatable) (lua_State *L, int objindex); // 把一张表弹出栈，并将其设为给定索引处的值的元表。
-LUA_API int   (lua_setiuservalue) (lua_State *L, int idx, int n);
+LUA_API int   (lua_setiuservalue) (lua_State *L, int idx, int n); // Pops a value from the stack and sets it as the new n-th user value associated to the full userdata at the given index. Returns 0 if the userdata does not have that value.
 
 
 /*
