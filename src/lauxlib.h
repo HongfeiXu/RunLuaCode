@@ -63,7 +63,7 @@ LUALIB_API lua_Integer (luaL_checkinteger) (lua_State *L, int arg);
 LUALIB_API lua_Integer (luaL_optinteger) (lua_State *L, int arg,
                                           lua_Integer def);
 
-LUALIB_API void (luaL_checkstack) (lua_State *L, int sz, const char *msg);
+LUALIB_API void (luaL_checkstack) (lua_State *L, int sz, const char *msg); // 将栈空间扩展到 top + sz 个元素。 如果扩展不了，则抛出一个错误。 msg 是用于错误消息的额外文本 （NULL 表示不需要额外文本）。
 LUALIB_API void (luaL_checktype) (lua_State *L, int arg, int t); // 检查函数的第arg个参数的类型是否是t
 LUALIB_API void (luaL_checkany) (lua_State *L, int arg); // 检查函数在 arg 位置是否有任何类型（包括 nil）的参数。
 

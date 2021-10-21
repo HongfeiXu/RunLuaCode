@@ -1,4 +1,7 @@
 #pragma once
+
+// Refs: Programming in Lua, 4th ed. Ch33 Threads and States
+
 #include <string.h>
 #include <dirent.h>
 #include <errno.h>
@@ -47,3 +50,4 @@ void testCoroutine()
 	printf("nresults = %d\n", nresults);		// 1
 	stack_dump(L1);	// [3]
 }
+

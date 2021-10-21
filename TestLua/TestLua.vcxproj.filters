@@ -122,5 +122,11 @@
     <ClInclude Include="src\MultipleThreadsExample.h">
       <Filter>src\ProgrammingInLua 4th.\chapter33 Threads and States</Filter>
     </ClInclude>
+    <ClInclude Include="src\lproc.h">
+      <Filter>src\ProgrammingInLua 4th.\chapter33 Threads and States</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
