@@ -9,6 +9,7 @@ thirdparty中为其他代码：
 thirdpartylibs中为第三方库的lib
 
 - expat的x64是cmake编译出的，Win32是github上下载的
+- pthread库 https://www.mirrorservice.org/sites/sourceware.org/pub/pthreads-win32/
 
 # Lua C API 学习
 
