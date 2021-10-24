@@ -126,7 +126,4 @@
       <Filter>src\ProgrammingInLua 4th.\chapter33 Threads and States</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
 </Project>
