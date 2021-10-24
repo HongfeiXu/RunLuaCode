@@ -17,11 +17,11 @@ int main()
 
 #else
 
-#include "MultipleThreadsExample.h"
+#include "lproc.h"
 
 int main(int argc, char* argv[])
 {
-	testCoroutine();
+	test();
 
 	return 0;
 }

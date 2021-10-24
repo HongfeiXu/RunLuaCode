@@ -59,6 +59,11 @@ Chapter 32. Managing Resources
 - DirIterator.h
 - ExpatBinding.h
 
+Chapter 33. Threads and States
+
+- MultipleThreadsExample.h
+- lproc.h
+
 # Lua C\C++ binding
 
 

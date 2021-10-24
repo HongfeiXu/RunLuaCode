@@ -96,7 +96,7 @@ LUALIB_API int (luaL_loadfilex) (lua_State *L, const char *filename,
 
 LUALIB_API int (luaL_loadbufferx) (lua_State *L, const char *buff, size_t sz,
                                    const char *name, const char *mode);
-LUALIB_API int (luaL_loadstring) (lua_State *L, const char *s);
+LUALIB_API int (luaL_loadstring) (lua_State *L, const char *s); // Loads a string as a Lua chunk. This function uses lua_load to load the chunk in the zero-terminated string s.
 
 LUALIB_API lua_State *(luaL_newstate) (void); // 创建一个新的 Lua 状态机。
 
@@ -127,6 +127,7 @@ LUALIB_API void (luaL_requiref) (lua_State *L, const char *modname,
 #define luaL_newlibtable(L,l)	\
   lua_createtable(L, 0, sizeof(l)/sizeof((l)[0]) - 1)
 
+// Creates a new table and registers there the functions in the list l.
 #define luaL_newlib(L,l)  \
   (luaL_checkversion(L), luaL_newlibtable(L,l), luaL_setfuncs(L,l,0))
 
@@ -147,7 +148,8 @@ LUALIB_API void (luaL_requiref) (lua_State *L, const char *modname,
 #define luaL_dostring(L, s) \
 	(luaL_loadstring(L, s) || lua_pcall(L, 0, LUA_MULTRET, 0))
 
-#define luaL_getmetatable(L,n)	(lua_getfield(L, LUA_REGISTRYINDEX, (n))) // 将注册表中 tname 对应的元表 （参见 luaL_newmetatable）压栈。 如果没有 tname 对应的元表，则将 nil 压栈并返回假。
+// 将注册表中 tname 对应的元表 （参见 luaL_newmetatable）压栈。 如果没有 tname 对应的元表，则将 nil 压栈并返回假。
+#define luaL_getmetatable(L,n)	(lua_getfield(L, LUA_REGISTRYINDEX, (n)))
 
 #define luaL_opt(L,f,n,d)	(lua_isnoneornil(L,(n)) ? (d) : f(L,(n)))
 

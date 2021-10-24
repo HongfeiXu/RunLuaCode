@@ -14,6 +14,8 @@ extern "C"
 #include "lualib.h"
 }
 
+#pragma comment(lib, "libexpat.lib")
+
 // -------------------------------------------------
 // 整体流程框架
 //
