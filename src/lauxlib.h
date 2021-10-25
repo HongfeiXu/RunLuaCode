@@ -107,7 +107,7 @@ LUALIB_API void luaL_addgsub (luaL_Buffer *b, const char *s,
 LUALIB_API const char *(luaL_gsub) (lua_State *L, const char *s,
                                     const char *p, const char *r);
 
-LUALIB_API void (luaL_setfuncs) (lua_State *L, const luaL_Reg *l, int nup); // 把数组 l 中的所有函数 （参见 luaL_Reg） 注册到栈顶的表中
+LUALIB_API void (luaL_setfuncs) (lua_State *L, const luaL_Reg *l, int nup);
 
 LUALIB_API int (luaL_getsubtable) (lua_State *L, int idx, const char *fname);
 

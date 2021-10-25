@@ -37,6 +37,19 @@ static int math_abs (lua_State *L) {
   return 1;
 }
 
+// 取相反数
+static int math_negative(lua_State* L)
+{
+	if (lua_isinteger(L, 1)) {
+		lua_Integer n = lua_tointeger(L, 1);
+		n = (lua_Integer)(0u - (lua_Unsigned)n);
+		lua_pushinteger(L, n);
+	}
+    else
+        lua_pushnumber(L, -1 * luaL_checknumber(L, 1));
+    return 1;
+}
+
 static int math_sin (lua_State *L) {
   lua_pushnumber(L, l_mathop(sin)(luaL_checknumber(L, 1)));
   return 1;
@@ -724,6 +737,7 @@ static const luaL_Reg mathlib[] = {
   {"sqrt",  math_sqrt},
   {"tan",   math_tan},
   {"type", math_type},
+  {"negative", math_negative},
 #if defined(LUA_COMPAT_MATHLIB)
   {"atan2", math_atan},
   {"cosh",   math_cosh},
