@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{77ab6968-7611-4af1-b255-facb8853465b}</ProjectGuid>
-    <RootNamespace>TestLua</RootNamespace>
+    <ProjectGuid>{62bb1f13-0aeb-41b2-844f-6226f33e6e77}</ProjectGuid>
+    <RootNamespace>ToLua</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -72,36 +72,27 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\thirdparty;..\src\lua;$(IncludePath)</IncludePath>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\thirdparty;..\src\lua;$(IncludePath)</IncludePath>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\thirdparty;..\src\lua;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\thirdparty;..\src\lua;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>LuaLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -110,30 +101,28 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>LuaLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>LuaLib.lib;</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -142,51 +131,103 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>LuaLib.lib;</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\LuaUtils.cpp" />
-    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="..\src\lua\lapi.c" />
+    <ClCompile Include="..\src\lua\lauxlib.c" />
+    <ClCompile Include="..\src\lua\lbaselib.c" />
+    <ClCompile Include="..\src\lua\lcode.c" />
+    <ClCompile Include="..\src\lua\lcorolib.c" />
+    <ClCompile Include="..\src\lua\lctype.c" />
+    <ClCompile Include="..\src\lua\ldblib.c" />
+    <ClCompile Include="..\src\lua\ldebug.c" />
+    <ClCompile Include="..\src\lua\ldo.c" />
+    <ClCompile Include="..\src\lua\ldump.c" />
+    <ClCompile Include="..\src\lua\lfunc.c" />
+    <ClCompile Include="..\src\lua\lgc.c" />
+    <ClCompile Include="..\src\lua\linit.c" />
+    <ClCompile Include="..\src\lua\liolib.c" />
+    <ClCompile Include="..\src\lua\llex.c" />
+    <ClCompile Include="..\src\lua\lmathlib.c" />
+    <ClCompile Include="..\src\lua\lmem.c" />
+    <ClCompile Include="..\src\lua\loadlib.c" />
+    <ClCompile Include="..\src\lua\lobject.c" />
+    <ClCompile Include="..\src\lua\lopcodes.c" />
+    <ClCompile Include="..\src\lua\loslib.c" />
+    <ClCompile Include="..\src\lua\lparser.c" />
+    <ClCompile Include="..\src\lua\lstate.c" />
+    <ClCompile Include="..\src\lua\lstring.c" />
+    <ClCompile Include="..\src\lua\lstrlib.c" />
+    <ClCompile Include="..\src\lua\ltable.c" />
+    <ClCompile Include="..\src\lua\ltablib.c" />
+    <ClCompile Include="..\src\lua\ltm.c" />
+    <ClCompile Include="..\src\lua\lua.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\src\lua\luac.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\src\lua\lundump.c" />
+    <ClCompile Include="..\src\lua\lutf8lib.c" />
+    <ClCompile Include="..\src\lua\lvm.c" />
+    <ClCompile Include="..\src\lua\lzio.c" />
+    <ClCompile Include="..\src\tolua\tolua.c" />
+    <ClCompile Include="..\src\tolua\toluabind.c" />
+    <ClCompile Include="..\src\tolua\tolua_event.c" />
+    <ClCompile Include="..\src\tolua\tolua_is.c" />
+    <ClCompile Include="..\src\tolua\tolua_map.c" />
+    <ClCompile Include="..\src\tolua\tolua_push.c" />
+    <ClCompile Include="..\src\tolua\tolua_to.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\BooleanArray.h" />
-    <ClInclude Include="src\CallALuaFunctionFromC.h" />
-    <ClInclude Include="src\CCallLuaFunc.h" />
-    <ClInclude Include="src\CFunctionDir.h" />
-    <ClInclude Include="src\CFunctionMap.h" />
-    <ClInclude Include="src\CFunctionsExample.h" />
-    <ClInclude Include="src\CFunctionSplit.h" />
-    <ClInclude Include="src\CFunctionStrUpper.h" />
-    <ClInclude Include="src\CFunctionTableConcat.h" />
-    <ClInclude Include="src\CFunctionUpvalues.h" />
-    <ClInclude Include="src\DirIterator.h" />
-    <ClInclude Include="src\ExpatBinding.h" />
-    <ClInclude Include="src\EX_29.h" />
-    <ClInclude Include="src\EX_30.h" />
-    <ClInclude Include="src\GenericCallFunction.h" />
-    <ClInclude Include="src\ImpTupleByUpvalue.h" />
-    <ClInclude Include="src\IntegerArray.h" />
-    <ClInclude Include="src\LoadUserInfoFromFile.h" />
-    <ClInclude Include="src\lproc.h" />
-    <ClInclude Include="src\LuaCallCFunc.h" />
-    <ClInclude Include="src\LuaCplusplusClass.h" />
-    <ClInclude Include="src\LuaRegistry.h" />
-    <ClInclude Include="src\LuaUtils.h" />
-    <ClInclude Include="src\MultipleThreadsExample.h" />
-    <ClInclude Include="src\SetLimit.h" />
-    <ClInclude Include="src\SimpleLuaInterpreter.h" />
-    <ClInclude Include="src\StackDump.h" />
+    <ClInclude Include="..\src\lua\lapi.h" />
+    <ClInclude Include="..\src\lua\lauxlib.h" />
+    <ClInclude Include="..\src\lua\lcode.h" />
+    <ClInclude Include="..\src\lua\lctype.h" />
+    <ClInclude Include="..\src\lua\ldebug.h" />
+    <ClInclude Include="..\src\lua\ldo.h" />
+    <ClInclude Include="..\src\lua\lfunc.h" />
+    <ClInclude Include="..\src\lua\lgc.h" />
+    <ClInclude Include="..\src\lua\ljumptab.h" />
+    <ClInclude Include="..\src\lua\llex.h" />
+    <ClInclude Include="..\src\lua\llimits.h" />
+    <ClInclude Include="..\src\lua\lmem.h" />
+    <ClInclude Include="..\src\lua\lobject.h" />
+    <ClInclude Include="..\src\lua\lopcodes.h" />
+    <ClInclude Include="..\src\lua\lopnames.h" />
+    <ClInclude Include="..\src\lua\lparser.h" />
+    <ClInclude Include="..\src\lua\lprefix.h" />
+    <ClInclude Include="..\src\lua\lstate.h" />
+    <ClInclude Include="..\src\lua\lstring.h" />
+    <ClInclude Include="..\src\lua\ltable.h" />
+    <ClInclude Include="..\src\lua\ltm.h" />
+    <ClInclude Include="..\src\lua\lua.h" />
+    <ClInclude Include="..\src\lua\lua.hpp" />
+    <ClInclude Include="..\src\lua\luaconf.h" />
+    <ClInclude Include="..\src\lua\lualib.h" />
+    <ClInclude Include="..\src\lua\lundump.h" />
+    <ClInclude Include="..\src\lua\lvm.h" />
+    <ClInclude Include="..\src\lua\lzio.h" />
+    <ClInclude Include="..\src\tolua\tolua.h" />
+    <ClInclude Include="..\src\tolua\tolua_event.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
 </Project>
