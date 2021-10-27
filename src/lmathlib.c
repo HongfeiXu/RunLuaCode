@@ -191,7 +191,9 @@ static int math_log (lua_State *L) {
       res = l_mathop(log2)(x);
     else
 #endif
-    if (base == l_mathop(10.0))
+    if (base == l_mathop(10.0)) // 由于浮点数误差的缘故，log(x)/log(10)往往不严格等于log10(x)，而是有少许误差，
+                                // 在常用的X86浮点指令集中，CPU硬件支持以10为底的对数计算，
+                                // 在C语言中也有独立的函数通过不同的机器指令来实现。
       res = l_mathop(log10)(x);
     else
       res = l_mathop(log)(x)/l_mathop(log)(base);

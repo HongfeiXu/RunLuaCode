@@ -247,7 +247,6 @@ static const struct luaL_Reg arraylib_m[] = {
 int luaopen_arraylib(lua_State* L)
 {
 	luaL_newmetatable(L, "LuaBook.booleanarray");	// create the metatable for array
-	lua_pushvalue(L, -1);
 	lua_pushvalue(L, -1);				// duplicate the metatable
 	lua_setfield(L, -2, "__index");		// mt.__index = mt
 	luaL_setfuncs(L, arraylib_m, 0);	// register metamethods
