@@ -11,9 +11,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaExe", "LuaExe\LuaExe.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyLib", "MyLib\MyLib.vcxproj", "{D40D2E2B-5D67-4D39-873B-DEB64CAD3133}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ToLua", "..\ToLuaLearn\ToLua\ToLua.vcxproj", "{62BB1F13-0AEB-41B2-844F-6226F33E6E77}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ToLua", "ToLua\ToLua.vcxproj", "{62BB1F13-0AEB-41B2-844F-6226F33E6E77}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ToLuaSimpleTest", "..\ToLuaLearn\ToLuaSimpleTest\ToLuaSimpleTest.vcxproj", "{53865846-5FE0-4C29-9A28-817ABD9368DF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ToLuaSimpleTest", "ToLuaSimpleTest\ToLuaSimpleTest.vcxproj", "{53865846-5FE0-4C29-9A28-817ABD9368DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
