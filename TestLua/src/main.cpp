@@ -17,7 +17,7 @@ int main()
 
 #else
 
-#include "lproc.h"
+#include "Dispatcher.h"
 
 int main(int argc, char* argv[])
 {
