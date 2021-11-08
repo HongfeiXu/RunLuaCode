@@ -115,3 +115,6 @@ true
 print(10 + "1")
 
 
+-- [TODO]The String Library
+
+
