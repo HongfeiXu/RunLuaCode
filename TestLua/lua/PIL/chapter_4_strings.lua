@@ -112,9 +112,55 @@ nil
 true
 --]]
 
-print(10 + "1")
-
-
 -- [TODO]The String Library
+
+local function string_library_test()
+    print(string.rep("abc", 3))
+    print(string.reverse("A Long Line!"))
+    print(string.lower("A Long Line!"))
+    print(string.upper("A Long Line!"))
+
+    local s = "[in bracket]"
+    print(string.sub(s, 2, -2))
+    print(string.sub(s, 1, 1))
+    print(string.sub(s, -1, -1))
+
+    print(string.char(97))
+    print(string.char(98, 99))
+    print(string.byte("abcdef", 2))
+    print(string.byte("helloworld", 1, -1)) -- a nice idiom
+
+    print(string.format("x = %d y = %d", 10, 20))
+    print(string.format("x = %x", 200))
+    print(string.format("x = 0x%X", 200))
+    local tag, title = "h1", "a title"
+    print(string.format("<%s>%s<%s>", tag, title, tag))
+
+    print(string.format("pi = %.4f", math.pi))
+    local d, m, y = 5, 11, 1990
+    print(string.format("%02d/%02d/%04d", d, m, y))
+
+    print(s:sub(2, -2))
+
+    print(string.find("hello world", "wor"))
+    print(string.find("hello world", "war"))
+
+    print(string.gsub("hello world", "l", "."))
+end
+
+-- string_library_test()
+
+local function utf_8_test()
+    print(utf8.len("你好"))     -- 2
+    print(string.len("你好"))   -- 6
+    print(utf8.char(114, 233))
+    print(utf8.codepoint("你好", 1))
+
+    for i, c in utf8.codes("你好") do
+        print(i, c)
+    end
+end
+
+utf_8_test()
 
 

@@ -23,7 +23,7 @@ static const struct luaL_Reg MyLib[] = {
 };
 
 // 从本dll导出的符号
-int __declspec(dllexport) luaopen_MyLib(lua_State* L)
+LUALIB_API int luaopen_MyLib(lua_State* L)
 {
 	luaL_newlib(L, MyLib);
 	return 1;
