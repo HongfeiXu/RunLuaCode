@@ -41,14 +41,19 @@ static int lua_CCode_summation(lua_State* L)
 
 static int lua_CCode_pack(lua_State* L)
 {
+	stack_dump(L);					// [a, b, c]
 	int n = lua_gettop(L);
-	lua_newtable(L);
-	lua_insert(L, 1);
+	lua_newtable(L);				// [a, b, c, table]
+	stack_dump(L);
+	lua_insert(L, 1);				// [table, a, b, c]
+	stack_dump(L);
 	for (int i = n; i >= 1; --i)
 	{
-		lua_pushinteger(L, i);
-		lua_insert(L, -2);		// 将value放在栈顶，key放到value下面
-		lua_settable(L, 1);
+		lua_pushinteger(L, i);		// [table, a, b,c, 3]
+		lua_insert(L, -2);		// 将value放在栈顶，key放到value下面 [table, a, b, 3, c]
+		stack_dump(L);
+		lua_settable(L, 1);			// [table, a, b]
+		stack_dump(L);
 	}
 	lua_pushstring(L, "n");
 	lua_pushinteger(L, n);

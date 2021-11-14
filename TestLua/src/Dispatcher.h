@@ -56,7 +56,7 @@ struct Listener {
 
 struct Dispatcher {
 	int ID;
-	std::unordered_map<Event, std::unordered_set<std::shared_ptr<Listener>>> event2Listeners;
+	std::unordered_map<Event, std::unordered_set<std::shared_ptr<Listener>>, EventHash, EventEqual> event2Listeners;
 };
 
 
