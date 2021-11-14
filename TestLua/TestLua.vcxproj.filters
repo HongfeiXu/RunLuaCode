@@ -34,6 +34,9 @@
     <Filter Include="src\ProgrammingInLua 4th.\chapter33 Threads and States">
       <UniqueIdentifier>{4d5a5396-9349-48c3-9cc7-7716dc349c36}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\lunar">
+      <UniqueIdentifier>{adffb0a6-1daf-4ea9-b006-a6a8f4f7a9e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\LuaUtils.cpp">
@@ -127,6 +130,12 @@
     </ClInclude>
     <ClInclude Include="src\Dispatcher.h">
       <Filter>src\ProgrammingInLua 4th.</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lunar.h">
+      <Filter>src\lunar</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lunar_test.h">
+      <Filter>src\lunar</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

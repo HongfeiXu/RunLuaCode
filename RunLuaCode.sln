@@ -8,14 +8,25 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestLua", "TestLua\TestLua.vcxproj", "{77AB6968-7611-4AF1-B255-FACB8853465B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaExe", "LuaExe\LuaExe.vcxproj", "{9885F6E1-BCFF-40D2-A8CC-9D401B845B37}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FA134254-00BF-4076-8DE4-5BFF98A2DF07} = {FA134254-00BF-4076-8DE4-5BFF98A2DF07}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyLib", "MyLib\MyLib.vcxproj", "{D40D2E2B-5D67-4D39-873B-DEB64CAD3133}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ToLua", "ToLua\ToLua.vcxproj", "{62BB1F13-0AEB-41B2-844F-6226F33E6E77}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FA134254-00BF-4076-8DE4-5BFF98A2DF07} = {FA134254-00BF-4076-8DE4-5BFF98A2DF07}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ToLuaSimpleTest", "ToLuaSimpleTest\ToLuaSimpleTest.vcxproj", "{53865846-5FE0-4C29-9A28-817ABD9368DF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FA134254-00BF-4076-8DE4-5BFF98A2DF07} = {FA134254-00BF-4076-8DE4-5BFF98A2DF07}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gbk", "gbk\gbk.vcxproj", "{5433993E-32AC-48A3-8072-2663615AF303}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Luna", "Luna\Luna.vcxproj", "{8F81A4B5-229B-4013-B1CB-778A70BA9452}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +92,14 @@ Global
 		{5433993E-32AC-48A3-8072-2663615AF303}.Release|x64.Build.0 = Release|x64
 		{5433993E-32AC-48A3-8072-2663615AF303}.Release|x86.ActiveCfg = Release|Win32
 		{5433993E-32AC-48A3-8072-2663615AF303}.Release|x86.Build.0 = Release|Win32
+		{8F81A4B5-229B-4013-B1CB-778A70BA9452}.Debug|x64.ActiveCfg = Debug|x64
+		{8F81A4B5-229B-4013-B1CB-778A70BA9452}.Debug|x64.Build.0 = Debug|x64
+		{8F81A4B5-229B-4013-B1CB-778A70BA9452}.Debug|x86.ActiveCfg = Debug|Win32
+		{8F81A4B5-229B-4013-B1CB-778A70BA9452}.Debug|x86.Build.0 = Debug|Win32
+		{8F81A4B5-229B-4013-B1CB-778A70BA9452}.Release|x64.ActiveCfg = Release|x64
+		{8F81A4B5-229B-4013-B1CB-778A70BA9452}.Release|x64.Build.0 = Release|x64
+		{8F81A4B5-229B-4013-B1CB-778A70BA9452}.Release|x86.ActiveCfg = Release|Win32
+		{8F81A4B5-229B-4013-B1CB-778A70BA9452}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
