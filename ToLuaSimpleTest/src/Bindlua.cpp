@@ -18,7 +18,7 @@
 TOLUA_API int tolua_Bindlua_open (lua_State* tolua_S);
 LUALIB_API int luaopen_Bindlua (lua_State* tolua_S);
 
-extern double a;
+double a = 20;
 
 /* function to register type */
 static void tolua_reg_types (lua_State* tolua_S)

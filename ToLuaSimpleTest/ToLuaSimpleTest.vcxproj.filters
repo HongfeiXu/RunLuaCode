@@ -37,6 +37,15 @@
     <ClCompile Include="..\src\tolua\toluabind.c">
       <Filter>tolua</Filter>
     </ClCompile>
+    <ClCompile Include="MLuaCar.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MLuaCarTest.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BindLuaTest.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\tolua\tolua.h">
@@ -51,6 +60,12 @@
       <Filter>src</Filter>
     </None>
     <None Include="src\a.lua">
+      <Filter>src</Filter>
+    </None>
+    <None Include="src\MLuaCarTest.lua">
+      <Filter>src</Filter>
+    </None>
+    <None Include="src\util.lua">
       <Filter>src</Filter>
     </None>
   </ItemGroup>

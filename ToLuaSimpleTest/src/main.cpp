@@ -1,39 +1,18 @@
 #include <stdio.h>
 
-extern "C"{
+extern "C" {
 #include "lua.h"
 #include "lualib.h"
 #include "lauxlib.h"
 }
 
-double a = 1;
+void testBindLua();
+void testMLuaCar();
 
-int tolua_Bindlua_open(lua_State* tolua_S);
 
 int main()
 {
-	lua_State* L = luaL_newstate();
-	luaL_openlibs(L);
-
-	tolua_Bindlua_open(L);
-
-	a = 99;
-	if (luaL_dofile(L, "src/a.lua") != LUA_OK)
-	{
-		printf("lua error: %s\n", lua_tostring(L, -1));
-	}
-	printf("a = %f\n\n\n", a);
-
-	a = a + 1000;
-
-	if (luaL_dofile(L, "src/a.lua") != LUA_OK)
-	{
-		printf("lua error: %s\n", lua_tostring(L, -1));
-	}
-	printf("a = %f\n", a);
-
-	lua_close(L);
-	return 0;
+	testMLuaCar();
 }
 
 /*
