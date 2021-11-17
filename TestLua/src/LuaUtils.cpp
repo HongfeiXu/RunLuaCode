@@ -49,16 +49,28 @@ void print_stack_value(lua_State* L, int i)
 
 void stack_dump(lua_State* L)
 {
-	printf("--stack_dump begin--\n");
 	int i;
-	int top = lua_gettop(L);	// depth of the stack
-	for (i = 1; i <= top; ++i)
+	int top = lua_gettop(L);
+	printf("Total [%d] in lua stack\n", top);
+	for (i = -1; i >= -top; i--)
 	{
-		print_stack_value(L, i);
-		printf("   ");
+		int t = lua_type(L, i);
+		switch (t)
+		{
+		case LUA_TSTRING:
+			printf("  [%02d] string %s\n", i, lua_tostring(L, i));
+			break;
+		case LUA_TBOOLEAN:
+			printf("  [%02d] boolean %s\n", i, lua_toboolean(L, i) ? "true" : "false");
+			break;
+		case LUA_TNUMBER:
+			printf("  [%02d] number %g\n", i, lua_tonumber(L, i));
+			break;
+		default:
+			printf("  [%02d] %s\n", i, lua_typename(L, t));
+		}
 	}
 	printf("\n");
-	printf("--stack_dump end--\n");
 }
 
 void load_lua_src(lua_State* L, const char* fname)

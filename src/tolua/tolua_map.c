@@ -230,11 +230,39 @@ static void tolua_push_globals_table (lua_State* L)
 #endif
 }
 
+static void tolua_stack_dump(lua_State* L, const char* label)
+{
+	int i;
+	int top = lua_gettop(L);
+	printf("Total [%d] in lua stack: %s\n", top, label != 0 ? label : "");
+	for (i = -1; i >= -top; i--)
+	{
+		int t = lua_type(L, i);
+		switch (t)
+		{
+		case LUA_TSTRING:
+			printf("  [%02d] string %s\n", i, lua_tostring(L, i));
+			break;
+		case LUA_TBOOLEAN:
+			printf("  [%02d] boolean %s\n", i, lua_toboolean(L, i) ? "true" : "false");
+			break;
+		case LUA_TNUMBER:
+			printf("  [%02d] number %g\n", i, lua_tonumber(L, i));
+			break;
+		default:
+			printf("  [%02d] %s\n", i, lua_typename(L, t));
+		}
+	}
+	printf("\n");
+}
+
 TOLUA_API void tolua_open (lua_State* L)
 {
+  //tolua_stack_dump(L, "1");
   int top = lua_gettop(L);
   lua_pushstring(L,"tolua_opened");
   lua_rawget(L,LUA_REGISTRYINDEX);
+  //tolua_stack_dump(L, "2");
   if (!lua_isboolean(L,-1))
   {
     lua_pushstring(L,"tolua_opened"); lua_pushboolean(L,1); lua_rawset(L,LUA_REGISTRYINDEX);
